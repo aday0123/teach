@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code 生成器</title>
+    <style>
+        #qrcode {
+            margin: 20px auto;
+            text-align: center;
+        }
+    </style>
+    <!-- 引入QRCode.js庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <h1>QR Code 生成器</h1>
+    <div id="qrcode"></div>
+
+    <script>
+        // 創建QR Code實例，並設置內容為當前頁面的URL
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: window.location.href, // 獲取當前頁面的URL
+            width: 128, // QR碼的寬度
+            height: 128, // QR碼的高度
+            colorDark: "#000000", // QR碼的顏色
+            colorLight: "#ffffff", // QR碼的背景顏色
+            correctLevel: QRCode.CorrectLevel.H // 錯誤修正級別
+        });
+    </script>
+</body>
+</html>
