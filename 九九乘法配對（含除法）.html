@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf8"><style id="qw-theme">:root {
+  --color-bg: #faf9fc !important;
+  --color-text: #131920 !important;
+  --chat-column-base: 720px !important;
+  --chat-column-max: 720px !important;
+  --color-navbar-bg: #f9f9fb !important;
+  --color-navbar-fg: #131920 !important;
+  --color-navbar-divider: #0000001f !important;
+  --color-leftnav-bg: #fff !important;
+  --color-bg-chat-view: #f9f9fb !important;
+  --color-bg-secondary: #fff !important;
+  --color-bg-tertiary: #f9fafb !important;
+  --color-bg-hover: #f3f4f6 !important;
+  --color-surface: #f9fafb !important;
+  --color-surface-hover: #f3f4f6 !important;
+  --color-surface-active: #e5e7eb !important;
+  --color-border: #0000001f !important;
+  --color-border-light: #0000000f !important;
+  --color-border-strong: #d1d5db !important;
+  --background-toggle-off-default: #fff0 !important;
+  --color-primary: #4200db !important;
+  --color-primary-dark: #35009e !important;
+  --color-primary-light: #8575ff !important;
+  --color-primary-bg: #e8e6ff !important;
+  --color-primary-hover-border: #35009e !important;
+  --color-nav-icon-active: #4200db !important;
+  --color-nav-hover-border: #4200db !important;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent) !important;
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent) !important;
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent) !important;
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent) !important;
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent) !important;
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent) !important;
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent) !important;
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent) !important;
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent) !important;
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent) !important;
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent) !important;
+  --color-focus-ring: #4200db !important;
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-sidebar-hover-solid: color-mix(in srgb, #4200db 12%, #faf9fc) !important;
+  --block-selection-outline-offset: 2px !important;
+  --color-accent: #4200db !important;
+  --color-accent-foreground: #4200db !important;
+  --color-accent-dark: #35009e !important;
+  --color-accent-light: #e8e6ff !important;
+  --color-accent-inverse: #fff !important;
+  --color-link: #4200db !important;
+  --color-brand-ai-gradient-start: #6842ff !important;
+  --color-brand-ai-gradient-mid: #d600ba !important;
+  --color-brand-ai-gradient-end: #ff4b14 !important;
+  --color-brand-kiro: #9147ff !important;
+  --color-primary-gradient-end: #e8e6ff !important;
+  --color-primary-bg-solid: #e8e6ff !important;
+  --color-user-bubble: #f3f3f7 !important;
+  --color-user-bubble-text: #131920 !important;
+  --color-text-secondary: #5e5e5e !important;
+  --color-text-tertiary: #656871 !important;
+  --color-text-muted: #656871 !important;
+  --color-text-on-primary: #fff !important;
+  --color-success: #00802f !important;
+  --color-success-dark: #00471e !important;
+  --color-success-light: #d9ffd6 !important;
+  --color-success-hover: #005c26 !important;
+  --color-success-bg: #e6f5eb !important;
+  --color-success-border: #b3d9bf !important;
+  --color-success-foreground: #00802f !important;
+  --color-success-dark-foreground: #00471e !important;
+  --color-success-text: #00471e !important;
+  --color-error: #db0000 !important;
+  --color-error-dark: #700000 !important;
+  --color-error-light: #ffe0e0 !important;
+  --color-error-hover: #ffe0e0 !important;
+  --color-error-bg: #fceaea !important;
+  --color-error-border: #f2cccc !important;
+  --color-error-active-border: #db0000 !important;
+  --color-error-foreground: #db0000 !important;
+  --color-error-dark-foreground: #700000 !important;
+  --color-error-inverse: #fff !important;
+  --color-error-text: #700000 !important;
+  --color-warning: #f2b100 !important;
+  --color-warning-dark: #573a00 !important;
+  --color-warning-light: #fffbbd !important;
+  --color-warning-hover: #db9200 !important;
+  --color-warning-bg: #fef7e6 !important;
+  --color-warning-border: #f9dfa3 !important;
+  --color-warning-foreground: #f2b100 !important;
+  --color-warning-dark-foreground: #573a00 !important;
+  --color-warning-inverse: #573a00 !important;
+  --color-surface-warning: #fffbbd !important;
+  --color-text-warning: #573a00 !important;
+  --color-info: #006ce0 !important;
+  --color-info-dark: #002a66 !important;
+  --color-info-light: #d1f1ff !important;
+  --color-info-hover: #003b8f !important;
+  --color-info-bg: #ebf3fc !important;
+  --color-info-border: #b3d1f0 !important;
+  --color-info-foreground: #006ce0 !important;
+  --color-info-dark-foreground: #002a66 !important;
+  --color-info-inverse: #fff !important;
+  --color-overlay: #00000080 !important;
+  --color-shadow: #00000014 !important;
+  --color-hover: #0000000d !important;
+  --color-tooltip-bg: #000000d9 !important;
+  --color-tooltip-text: #fff !important;
+  --color-voice-purple: #8575ff !important;
+  --color-voice-purple-dark: #4200db !important;
+  --color-voice-purple-light: #8575ff !important;
+  --color-voice-red: #db0000 !important;
+  --color-voice-red-dark: #700000 !important;
+  --color-voice-amber: #f2b100 !important;
+  --color-voice-purple-glow: #4200db66 !important;
+  --color-voice-red-glow: #db000066 !important;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace !important;
+  --text-2xs: .5625rem !important;
+  --text-xs: .625rem !important;
+  --text-sm: .6875rem !important;
+  --text-base: .75rem !important;
+  --text-md: .8125rem !important;
+  --text-lg: .875rem !important;
+  --text-xl: 1rem !important;
+  --text-2xl: 1.125rem !important;
+  --text-3xl: 1.25rem !important;
+  --text-4xl: 1.5rem !important;
+  --text-5xl: 2rem !important;
+  --spacing-1: calc(.25rem * 1) !important;
+  --spacing-1-5: calc(.25rem * 1.5) !important;
+  --spacing-2: calc(.25rem * 2) !important;
+  --spacing-3: calc(.25rem * 3) !important;
+  --spacing-4: calc(.25rem * 4) !important;
+  --spacing-5: calc(.25rem * 5) !important;
+  --spacing-6: calc(.25rem * 6) !important;
+  --spacing-7: calc(.25rem * 7) !important;
+  --spacing-8: calc(.25rem * 8) !important;
+  --spacing-9: calc(.25rem * 9) !important;
+  --spacing-10: calc(.25rem * 10) !important;
+  --border-radius-rounded-lg: 8px !important;
+  --radius-sm: 6px !important;
+  --radius-md: 10px !important;
+  --radius-card: 12px !important;
+  --radius-lg: 16px !important;
+  --radius-pill: 8px !important;
+  --shadow-sm: 0 1px 2px #0000000d !important;
+  --shadow-md: 0 4px 12px #00000014 !important;
+  --shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029 !important;
+  --color-success-bg-solid: #d9ffd6 !important;
+  --color-error-bg-solid: #ffe0e0 !important;
+  --color-error-border-solid: #ffe0e0 !important;
+  --color-warning-bg-solid: #fffbbd !important;
+  --color-warning-text: #573a00 !important;
+  --color-info-bg-solid: #d1f1ff !important;
+  --color-info-bg-solid-alt: #d1f1ff !important;
+  --color-info-text: #002a66 !important;
+  --color-info-text-alt: #002a66 !important;
+  --color-emerald: #10b981 !important;
+  --color-teal: #4ecdc4 !important;
+  --color-code-bg: #f3f3f7 !important;
+  --color-code-header-bg: #f1f3f5 !important;
+  --color-code-text: #24292e !important;
+  --color-code-border: #e1e4e8 !important;
+  --color-code-muted: #6a737d !important;
+  --color-inline-code-bg: #f3f3f7 !important;
+  --color-inline-code-text: #24292e !important;
+  --color-inline-code-border: #e1e4e8 !important;
+  --color-scrollbar-thumb: #d1d5db !important;
+  --color-scrollbar-track: transparent !important;
+  --qs-data-cat-01: #4338ca !important;
+  --qs-data-cat-02: #d97706 !important;
+  --qs-data-cat-03: #0891b2 !important;
+  --qs-data-cat-04: #8b5cf6 !important;
+  --qs-data-cat-05: #15803d !important;
+  --qs-data-cat-06: #0c4a6e !important;
+  --qs-data-cat-07: #d946ef !important;
+  --qs-data-cat-08: #65a30d !important;
+  --qs-data-cat-09: #1d4ed8 !important;
+  --qs-data-cat-10: #831843 !important;
+  --qs-data-cat-11: #c2410c !important;
+  --qs-data-cat-12: #115e59 !important;
+  --qs-data-cat-other: #737373 !important;
+  --qs-content: #fff !important;
+  --qs-main: #f9f9fb !important;
+  --qs-primary-foreground: #131920 !important;
+  --qs-secondary-foreground: #656871 !important;
+  --qs-tertiary-foreground: #656871 !important;
+  --qs-placeholder-foreground: #656871 !important;
+  --qs-divider: #dedee3 !important;
+  --qs-default-border: #8c8c94 !important;
+  --qs-neutral-soft: #b4b4bb !important;
+  --qs-neutral-gray-50: #f9fafb !important;
+  --qs-tertiary-background: #f9fafb !important;
+  --qs-action-hover: #f3f3f7 !important;
+  --qs-primary-default: #4200db !important;
+  --qs-primary-dark: #35009e !important;
+  --qs-primary-medium: #8575ff !important;
+  --qs-primary-light: #e8e6ff !important;
+  --qs-primary-inverse: #fff !important;
+  --qs-success-default: #00802f !important;
+  --qs-success-dark: #00471e !important;
+  --qs-success-light: #d9ffd6 !important;
+  --qs-error-default: #db0000 !important;
+  --qs-error-dark: #700000 !important;
+  --qs-warning-default: #f2b100 !important;
+  --qs-warning-dark: #573a00 !important;
+  --qs-warning-light: #fffbbd !important;
+  --qs-info-default: #006ce0 !important;
+  --qs-info-dark: #002a66 !important;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --safe-top: 0px !important;
+  --safe-bottom: 0px !important;
+  --safe-left: 0px !important;
+  --safe-right: 0px !important;
+  --qs-action-active: #e8e6ff !important;
+  --qs-action-active-hover: #b2a8ff !important;
+  --qs-action-disabled: #f3f3f7 !important;
+  --qs-active-border: #4200db !important;
+  --qs-application-navbar: #4200db !important;
+  --qs-application-navbar-dark: #35009e !important;
+  --qs-application-navbar-foreground: #fff !important;
+  --qs-application-navbar-light: #e8e6ff !important;
+  --qs-automation-dark: #660052 !important;
+  --qs-automation-default: #d600ba !important;
+  --qs-automation-light: #ffe0fb !important;
+  --qs-automation-medium: #b3008f !important;
+  --qs-automation-soft: #ff94f1 !important;
+  --qs-avatar-blue-bg: #d1f1ff !important;
+  --qs-avatar-blue-fg: #002a66 !important;
+  --qs-avatar-fuchsia-bg: #fce6ff !important;
+  --qs-avatar-fuchsia-fg: #590066 !important;
+  --qs-avatar-green-bg: #d9ffd6 !important;
+  --qs-avatar-green-fg: #00471e !important;
+  --qs-avatar-neutral-bg: #dedee3 !important;
+  --qs-avatar-neutral-fg: #131920 !important;
+  --qs-avatar-orange-bg: #ffe0d6 !important;
+  --qs-avatar-orange-fg: #661800 !important;
+  --qs-avatar-pink-bg: #ffe0fb !important;
+  --qs-avatar-pink-fg: #660052 !important;
+  --qs-avatar-primary-bg: #e8e6ff !important;
+  --qs-avatar-primary-fg: #35009e !important;
+  --qs-avatar-red-bg: #ffe0e0 !important;
+  --qs-avatar-red-fg: #700000 !important;
+  --qs-avatar-violet-bg: #f2e5ff !important;
+  --qs-avatar-violet-fg: #45008a !important;
+  --qs-avatar-yellow-bg: #fffbbd !important;
+  --qs-avatar-yellow-fg: #573a00 !important;
+  --qs-blue-100: #e2ebff !important;
+  --qs-blue-1000: #060d27 !important;
+  --qs-blue-200: #c2d5ff !important;
+  --qs-blue-300: #9fbdff !important;
+  --qs-blue-400: #7ea0fc !important;
+  --qs-blue-50: #fafbff !important;
+  --qs-blue-500: #517df6 !important;
+  --qs-blue-600: #2d5fe8 !important;
+  --qs-blue-700: #1d3cb9 !important;
+  --qs-blue-800: #162c85 !important;
+  --qs-blue-900: #102165 !important;
+  --qs-blue-950: #0b1746 !important;
+  --qs-brand: #fff !important;
+  --qs-brand-foreground: #131920 !important;
+  --qs-brand-navbar: #131920 !important;
+  --qs-brand-navbar-dark: #000 !important;
+  --qs-brand-navbar-foreground: #fff !important;
+  --qs-brand-navbar-light: #dedee3 !important;
+  --qs-coachmark: #006ce0 !important;
+  --qs-connection-dark: #661800 !important;
+  --qs-connection-default: #db3300 !important;
+  --qs-connection-light: #ffe0d6 !important;
+  --qs-connection-soft: #ff997a !important;
+  --qs-content-inverse: #333843 !important;
+  --qs-content-inverse-active: #131920 !important;
+  --qs-contrast-foreground: #131920 !important;
+  --qs-control-selected-bg: #4200db !important;
+  --qs-control-selected-hover-bg: #35009e !important;
+  --qs-darkpurple1-100: #eee1ef !important;
+  --qs-darkpurple1-1000: #130b14 !important;
+  --qs-darkpurple1-200: #dcc0dd !important;
+  --qs-darkpurple1-300: #c99ecc !important;
+  --qs-darkpurple1-400: #b57ab8 !important;
+  --qs-darkpurple1-50: #f8f2f8 !important;
+  --qs-darkpurple1-500: #97529b !important;
+  --qs-darkpurple1-600: #754078 !important;
+  --qs-darkpurple1-700: #542e57 !important;
+  --qs-darkpurple1-800: #472749 !important;
+  --qs-darkpurple1-900: #341c35 !important;
+  --qs-darkpurple1-950: #241325 !important;
+  --qs-darkpurple2-100: #f1e3fc !important;
+  --qs-darkpurple2-1000: #1b042f !important;
+  --qs-darkpurple2-200: #e7d0fb !important;
+  --qs-darkpurple2-300: #d6b0f8 !important;
+  --qs-darkpurple2-400: #be81f3 !important;
+  --qs-darkpurple2-50: #f8f1fe !important;
+  --qs-darkpurple2-500: #a652ef !important;
+  --qs-darkpurple2-600: #8e24eb !important;
+  --qs-darkpurple2-700: #7413c9 !important;
+  --qs-darkpurple2-800: #580e98 !important;
+  --qs-darkpurple2-900: #36095d !important;
+  --qs-darkpurple2-950: #260642 !important;
+  --qs-data-categorical-01: #4338ca !important;
+  --qs-data-categorical-02: #d97706 !important;
+  --qs-data-categorical-03: #0891b2 !important;
+  --qs-data-categorical-04: #8b5cf6 !important;
+  --qs-data-categorical-05: #15803d !important;
+  --qs-data-categorical-06: #0c4a6e !important;
+  --qs-data-categorical-07: #d946ef !important;
+  --qs-data-categorical-08: #65a30d !important;
+  --qs-data-categorical-09: #1d4ed8 !important;
+  --qs-data-categorical-10: #831843 !important;
+  --qs-data-categorical-11: #c2410c !important;
+  --qs-data-categorical-12: #115e59 !important;
+  --qs-data-categorical-other: #737373 !important;
+  --qs-data-divergent-negative: #ea580c !important;
+  --qs-data-divergent-positive: #4f46e5 !important;
+  --qs-data-divergent-red-green-negative: #dc2626 !important;
+  --qs-data-divergent-red-green-positive: #16a34a !important;
+  --qs-data-missing: #d4d4d4 !important;
+  --qs-data-sentiment-neutral: #737373 !important;
+  --qs-data-sentiment-warning: #9e6900 !important;
+  --qs-data-sequential-duochromatic-high: #1e1b4b !important;
+  --qs-data-sequential-duochromatic-low: #8b5cf6 !important;
+  --qs-data-sequential-monochromatic-high: #4f46e5 !important;
+  --qs-default-badge: #b4b4bb !important;
+  --qs-default-badge-dot: #656871 !important;
+  --qs-dimension: #4200db !important;
+  --qs-dimension-experimental: #4200db !important;
+  --qs-dimension-experimental-foreground: #4200db !important;
+  --qs-dimension-foreground: #fff !important;
+  --qs-disabled: #8c8c94 !important;
+  --qs-disabled-border: #dedee3 !important;
+  --qs-disabled-foreground: #b4b4bb !important;
+  --qs-divider-light: #f3f3f7 !important;
+  --qs-error-active-border: #db0000 !important;
+  --qs-error-border: #ffe0e0 !important;
+  --qs-error-foreground: #db0000 !important;
+  --qs-error-inverse: #fff !important;
+  --qs-error-light: #ffe0e0 !important;
+  --qs-error-medium: #900 !important;
+  --qs-error-soft: #ff9e9e !important;
+  --qs-focus-offset: 1px !important;
+  --qs-font-base-letter-spacing: .15px !important;
+  --qs-font-display: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --qs-gradient-automation-light-stop: #ffe0fb !important;
+  --qs-gradient-automation-medium-stop: #b3008f !important;
+  --qs-gradient-automation-stop: #d600ba !important;
+  --qs-gradient-connection-light-stop: #ffe0d6 !important;
+  --qs-gradient-connection-stop: #db3300 !important;
+  --qs-gradient-insight-light-stop: #fce6ff !important;
+  --qs-gradient-insight-stop: #a000b8 !important;
+  --qs-gradient-visualization-light-stop: #f2e5ff !important;
+  --qs-gradient-visualization-stop: #7300e5 !important;
+  --qs-green-100: #ccffd8 !important;
+  --qs-green-1000: #001409 !important;
+  --qs-green-200: #a9efba !important;
+  --qs-green-300: #84d39a !important;
+  --qs-green-400: #71c68c !important;
+  --qs-green-50: #f0fff3 !important;
+  --qs-green-500: #5bbe7a !important;
+  --qs-green-600: #3c955a !important;
+  --qs-green-700: #227340 !important;
+  --qs-green-800: #00441f !important;
+  --qs-green-900: #003317 !important;
+  --qs-green-950: #002410 !important;
+  --qs-grid-gap: 16px !important;
+  --qs-grid-gap-xl: 24px !important;
+  --qs-hero-banner-button-hover: color-mix(in srgb, #fff, transparent 60%) !important;
+  --qs-hover-border: #333843 !important;
+  --qs-info-inverse: #fff !important;
+  --qs-info-light: #d1f1ff !important;
+  --qs-info-medium: #003b8f !important;
+  --qs-info-soft: #75cfff !important;
+  --qs-insight-dark: #590066 !important;
+  --qs-insight-default: #a000b8 !important;
+  --qs-insight-light: #fce6ff !important;
+  --qs-insight-soft: #f299ff !important;
+  --qs-main-foreground: #131920 !important;
+  --qs-main-secondary-foreground: #656871 !important;
+  --qs-measure: #00802f !important;
+  --qs-measure-experimental: #f2b100 !important;
+  --qs-measure-experimental-foreground: #f2b100 !important;
+  --qs-measure-foreground: #fff !important;
+  --qs-neutral-0: #fff !important;
+  --qs-neutral-100: #f5f3ef !important;
+  --qs-neutral-1000: #0b0a0a !important;
+  --qs-neutral-200: #ece9e4 !important;
+  --qs-neutral-300: #e2dfda !important;
+  --qs-neutral-400: #cdc9c1 !important;
+  --qs-neutral-50: #faf9f7 !important;
+  --qs-neutral-500: #adaaa3 !important;
+  --qs-neutral-600: #94918b !important;
+  --qs-neutral-700: #7d7a73 !important;
+  --qs-neutral-800: #5e5b56 !important;
+  --qs-neutral-900: #302f2c !important;
+  --qs-neutral-950: #151310 !important;
+  --qs-neutral-black: #000 !important;
+  --qs-neutral-dark: #333843 !important;
+  --qs-neutral-deep: #656871 !important;
+  --qs-neutral-default: #dedee3 !important;
+  --qs-neutral-light: #f3f3f7 !important;
+  --qs-neutral-lightest: #f9f9fb !important;
+  --qs-neutral-medium: #8c8c94 !important;
+  --qs-neutral-strong: #131920 !important;
+  --qs-neutral-white: #fff !important;
+  --qs-overlay: color-mix(in srgb, #131920, transparent 50%) !important;
+  --qs-popover-border: transparent !important;
+  --qs-primary-inverse-foreground: #fff !important;
+  --qs-primary-soft: #b2a8ff !important;
+  --qs-progress-active: #4200db !important;
+  --qs-red-100: #ffe4e1 !important;
+  --qs-red-1000: #240004 !important;
+  --qs-red-200: #ffc7c2 !important;
+  --qs-red-300: #ffa099 !important;
+  --qs-red-400: #eb6560 !important;
+  --qs-red-50: #fff6f5 !important;
+  --qs-red-500: #c33c38 !important;
+  --qs-red-600: #aa2b2b !important;
+  --qs-red-700: #8a0f0f !important;
+  --qs-red-800: #6e000d !important;
+  --qs-red-900: #57000a !important;
+  --qs-red-950: #3d0007 !important;
+  --qs-secondary: #dedee3 !important;
+  --qs-secondary-dark: #b4b4bb !important;
+  --qs-secondary-light: #f3f3f7 !important;
+  --qs-shadow: #00000029 !important;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029 !important;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029 !important;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029 !important;
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029 !important;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029 !important;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029 !important;
+  --qs-spice: #ff9800 !important;
+  --qs-success-inverse: #fff !important;
+  --qs-success-medium: #005c26 !important;
+  --qs-success-soft: #aeffa8 !important;
+  --qs-tag-default: #dedee3 !important;
+  --qs-tag-soft-border: #b4b4bb !important;
+  --qs-toggle-tile-lg: calc(.25rem * 15) !important;
+  --qs-toggle-tile-md: calc(.25rem * 12) !important;
+  --qs-toggle-tile-sm: calc(.25rem * 8) !important;
+  --qs-transparent: transparent !important;
+  --qs-visualization-dark: #45008a !important;
+  --qs-visualization-default: #7300e5 !important;
+  --qs-visualization-light: #f2e5ff !important;
+  --qs-visualization-soft: #d4a8ff !important;
+  --qs-warning-experimental: #f2b100 !important;
+  --qs-warning-experimental-light: #fffbbd !important;
+  --qs-warning-experimental-light-foreground: #fffbbd !important;
+  --qs-warning-inverse: #573a00 !important;
+  --qs-warning-medium: #db9200 !important;
+  --qs-warning-soft: #ffed4d !important;
+  --qs-width-modal-lg: 1136px !important;
+  --qs-width-modal-md: 600px !important;
+  --qs-width-modal-sm: 384px !important;
+  --qs-yellow-100: #fff5cf !important;
+  --qs-yellow-1000: #1f1100 !important;
+  --qs-yellow-200: #ffe79e !important;
+  --qs-yellow-300: #fbd86f !important;
+  --qs-yellow-400: #facb3d !important;
+  --qs-yellow-50: #fffcf0 !important;
+  --qs-yellow-500: #e2ac36 !important;
+  --qs-yellow-600: #ca8d2b !important;
+  --qs-yellow-700: #9d672f !important;
+  --qs-yellow-800: #7a4c19 !important;
+  --qs-yellow-900: #522e00 !important;
+  --qs-yellow-950: #381f00 !important;
+  --qs-duration-reorder: .125s !important;
+  --qs-ease-reorder: ease-in-out !important;
+  --z-subtask-modal: 10000 !important;
+  --z-above-subtask-modal: 10001 !important;
+  --flow-size-overview-canvas-min-height: 480px !important;
+}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>九九乘法配對 (Copy)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg: 'var(--bg)', surface: 'var(--surface)', ink: 'var(--ink)', muted: 'var(--muted)',
+          line: 'var(--line)', chip: 'var(--chip)', chipdeep: 'var(--chip-deep)', chipink: 'var(--chip-ink)',
+          ok: 'var(--ok)', oksoft: 'var(--ok-soft)', onok: 'var(--on-ok)',
+          err: 'var(--err)', errsoft: 'var(--err-soft)', hi: 'var(--hi)', hisoft: 'var(--hi-soft)'
+        },
+        fontFamily: {
+          num: ['Lexend', '"Noto Sans TC"', 'system-ui', 'sans-serif'],
+          sans: ['"Noto Sans TC"', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  };
+</script>
+<style>
+  /* Layout: a work mat. Question slots on top, a 9-step number line as the divider, answer tiles in a tray below. */
+  :root {
+    --bg: #F2F5F8; --surface: #FFFFFF; --ink: #1B2632; --muted: #5A6A7A; --line: #D3DCE5;
+    --chip: #1A7FE0; --chip-deep: #0F5BA8; --chip-ink: #FFFFFF;
+    --ok: #18925F; --ok-soft: #E2F4EA; --on-ok: #FFFFFF;
+    --err: #C83E33; --err-soft: #FBE9E7; --hi: #E8A013; --hi-soft: #FFF4DB;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11171E; --surface: #19212B; --ink: #E5ECF2; --muted: #93A3B3; --line: #2D3A47;
+      --chip: #3B93F0; --chip-deep: #1F5FA3; --chip-ink: #FFFFFF;
+      --ok: #3CC48A; --ok-soft: #16301F; --on-ok: #0C2418;
+      --err: #F0796E; --err-soft: #3A1F1C; --hi: #F2B64A; --hi-soft: #3A2E14;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11171E; --surface: #19212B; --ink: #E5ECF2; --muted: #93A3B3; --line: #2D3A47;
+    --chip: #3B93F0; --chip-deep: #1F5FA3; --chip-ink: #FFFFFF;
+    --ok: #3CC48A; --ok-soft: #16301F; --on-ok: #0C2418;
+    --err: #F0796E; --err-soft: #3A1F1C; --hi: #F2B64A; --hi-soft: #3A2E14;
+    color-scheme: dark;
+  }
+  body { background: var(--bg); color: var(--ink); font-family: "Noto Sans TC", system-ui, sans-serif; }
+  h1, h2 { text-wrap: balance; }
+  .font-num { font-variant-numeric: tabular-nums; }
+
+  #slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 640px) { #slots { grid-template-columns: repeat(var(--cols, 5), minmax(0, 1fr)); } }
+  #slots.solo { grid-template-columns: minmax(0, 1fr); width: 100%; max-width: 22rem; margin-inline: auto; }
+
+  .chip { touch-action: none; }
+  .chip.dragging { position: relative; z-index: 30; transition: none !important; pointer-events: none; cursor: grabbing; box-shadow: 0 16px 28px rgba(0,0,0,.22) !important; }
+  .rod { touch-action: none; }
+  .rod.dragging { position: relative; z-index: 30; transition: none !important; pointer-events: none; cursor: grabbing; box-shadow: 0 14px 24px rgba(0,0,0,.22); }
+  .ghost-over { border-style: solid !important; border-color: var(--hi) !important; background: var(--hi-soft); color: var(--ink) !important; }
+  .awaiting .slot.empty { border-color: var(--hi); }
+  .awaiting .slot.empty .drop { border-color: var(--hi); color: var(--hi); }
+  .slot.over { border-color: var(--hi) !important; background: var(--hi-soft) !important; transform: scale(1.04); }
+  .slot:focus-visible, button:focus-visible { outline: 3px solid var(--hi); outline-offset: 3px; }
+
+  @keyframes shake { 0%,100% { transform: translateX(0) } 20% { transform: translateX(-7px) } 40% { transform: translateX(7px) } 60% { transform: translateX(-4px) } 80% { transform: translateX(4px) } }
+.shake { animation: shake .4s ease; }
+  @keyframes rodfade { 0% { opacity: 1; transform: translateY(0) } 30% { opacity: 1; transform: translateY(-14px) } 100% { opacity: 0; transform: translateY(-40px) scale(.7) } }
+  .rodfade { animation: rodfade 1.8s ease forwards; }
+  @keyframes blink { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+  .overrod { animation: blink .8s ease infinite; }
+  @keyframes pop { 0% { transform: scale(.94) } 55% { transform: scale(1.05) } 100% { transform: scale(1) } }
+  .pop { animation: pop .45s ease; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<main class="mx-auto flex max-w-5xl flex-col gap-5 px-4 py-6 sm:py-10">
+  <header class="flex flex-wrap items-end justify-between gap-3">
+    <div class="flex flex-col gap-1">
+      <p class="text-sm font-medium tracking-[0.2em] text-muted">資源班・乘法練習</p>
+      <h1 id="heading" class="text-3xl font-bold sm:text-4xl">九的乘法配對</h1>
+    </div>
+    <button id="settingsBtn" aria-expanded="false" aria-controls="settings" class="rounded-xl border-2 border-line bg-surface px-4 py-2 text-sm font-medium text-muted transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:text-ink hover:shadow-md">
+      老師設定
+    </button>
+  </header>
+
+  <div class="flex flex-col gap-2">
+    <span class="text-xs font-medium tracking-widest text-muted">今天練幾的乘法？</span>
+    <div id="bases" class="flex flex-wrap gap-2"></div>
+  </div>
+
+  <nav id="modes" role="tablist" aria-label="練習模式" class="grid grid-cols-2 gap-2 rounded-2xl sm:grid-cols-3 lg:grid-cols-7 border border-line bg-surface p-1.5"></nav>
+
+  <section id="settings" hidden="" class="grid gap-4 rounded-2xl border border-line bg-surface p-4 sm:grid-cols-2 sm:p-5 lg:grid-cols-3"></section>
+
+  <section id="board" class="relative flex flex-col gap-5 rounded-3xl border border-line bg-surface p-4 sm:p-6">
+    <div id="status" class="flex flex-wrap items-center justify-between gap-3 text-sm text-muted"></div>
+    <p id="instr" class="text-base text-muted"></p>
+    <div id="bars" hidden="" class="flex flex-col gap-5">
+      <div class="-mx-1 overflow-x-auto px-1">
+        <div id="barsInner" class="flex min-w-[640px] flex-col gap-6 px-5 pt-2"></div>
+      </div>
+    </div>
+    <div id="divBox" hidden=""></div>
+    <div id="slots" class="grid gap-3"></div>
+    <div id="line" aria-hidden="true"></div>
+    <div id="askBox"></div>
+    <div id="tray" class="flex min-h-[5.5rem] flex-wrap items-center justify-center gap-3 sm:gap-4"></div>
+    <div id="feedback" aria-live="polite" class="flex min-h-[4.5rem] flex-col items-center justify-center gap-1 text-center"></div>
+    <div id="done" hidden="" class="absolute inset-0 z-40 flex items-center justify-center overflow-auto rounded-3xl bg-surface p-6"></div>
+  </section>
+
+  <p class="text-sm text-muted">建議順序：數棒跳數 → 累加配對 → 乘法配對 → 說說看 → 隨機抽考 → 實戰演練。同一題錯兩次，卡片上會自動出現提示。</p>
+</main>
+
+<script>
+(function () {
+  const ZH = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+  // Chinese reading of a product; `inChant` uses 一十 for 10, as in 二五一十
+  function zhNum(p, inChant) {
+    if (p === 100) return '一百';
+    if (p < 10) return ZH[p];
+    if (p === 10) return inChant ? '一十' : '十';
+    const t = Math.floor(p / 10), o = p % 10;
+    return (t === 1 ? '十' : ZH[t] + '十') + (o ? ZH[o] : '');
+  }
+  const B = () => state.base;
+  function kj(n) {
+    const b = B(), p = b * n;
+    if (b === 10) return '十乘' + ZH[n] + '得' + zhNum(p, false);
+    if (n === 10) return ZH[b] + '乘十得' + zhNum(p, false);
+    if (p < 10) return ZH[b] + ZH[n] + '得' + ZH[p];
+    return ZH[b] + ZH[n] + zhNum(p, true);
+  }
+  const MODES = [
+    { key: 'bars', name: '數棒跳數', sub: () => `0、${B()}、${2 * B()}…` },
+    { key: 'add', name: '累加配對', sub: () => `${B()}、${B()}+${B()}、${2 * B()}+${B()}…` },
+    { key: 'mul', name: '乘法配對', sub: () => `${B()}×1 到 ${B()}×10` },
+    { key: 'recall', name: '說說看', sub: '看題目說答案' },
+    { key: 'flash', name: '隨機抽考', sub: '一次只出一張' },
+    { key: 'drill', name: '實戰演練', sub: '自己輸入答案' },
+    { key: 'div', name: '除法', sub: () => `${5 * B()}÷${B()}、${5 * B() + 2}÷${B()}` }
+  ];
+  const SETTINGS = [
+    { key: 'range', label: '題目範圍', opts: [['low', '9×1–5'], ['high', '9×6–10'], ['all', '9×1–10']] },
+    { key: 'size', label: '每組張數', opts: [[3, '3 張'], [4, '4 張'], [5, '5 張'], [0, '全部']] },
+    { key: 'order', label: '題目順序', opts: [['seq', '依序'], ['shuffle', '打亂']] },
+    { key: 'speak', label: '配對後念出口訣', opts: [[true, '開'], [false, '關']] },
+    { key: 'hints', label: '提示按鈕', opts: [[true, '開'], [false, '關']] },
+    { key: 'divType', label: '除法題型', opts: [['exact', '只出整除'], ['rem', '只出有餘數'], ['mix', '混合']] }
+  ];
+
+  const $ = (s) => document.querySelector(s);
+  const board = $('#board'), slotsEl = $('#slots'), trayEl = $('#tray'), doneEl = $('#done');
+
+  let state = load();
+  let game = null;
+
+  function load() {
+    const d = { mode: 'bars', range: 'all', size: 5, order: 'seq', speak: true, hints: true, lineNums: true, base: 9, divType: 'mix' };
+    try { const s = JSON.parse(localStorage.getItem('nine-match-settings') || 'null'); if (s) return Object.assign(d, s); } catch (e) {}
+    return d;
+  }
+  function save() { try { localStorage.setItem('nine-match-settings', JSON.stringify(state)); } catch (e) {} }
+
+  function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+  function qText(n) { const b = B(); if (state.mode === 'add') return n === 1 ? String(b) : (b * (n - 1)) + '+' + b; return b + '×' + n; }
+  function hintText(n) {
+    const b = B();
+    if (state.mode === 'add') return '也就是 ' + b + '×' + n;
+    return n === 1 ? '就是 1 個 ' + b : '前一個答案加 ' + b + '：' + (b * (n - 1)) + '+' + b;
+  }
+  /* ---------- 語音 ---------- */
+  let voices = [];
+  const isTW = (v) => /zh[-_]TW/i.test(v.lang) || /臺灣|台灣|Taiwan/i.test(v.name);
+  const isZh = (v) => /^(zh|cmn|yue)/i.test(v.lang);
+  // 預設：Microsoft Yating；沒有的話依序找 Google 臺灣、其他 zh-TW 語音、任一中文語音
+  const isYating = (v) => /yating/i.test(v.name);
+  function defaultVoice() {
+    return voices.find(isYating) || voices.find((v) => /google/i.test(v.name) && isTW(v)) || voices.find(isTW) || voices.find(isZh) || null;
+  }
+  function chosenVoice() {
+    return (state.voice && voices.find((v) => v.voiceURI === state.voice)) || defaultVoice();
+  }
+  function loadVoices() {
+    try { voices = speechSynthesis.getVoices() || []; } catch (e) { voices = []; }
+    const s = document.getElementById('voiceBox'); if (s) s.outerHTML = renderVoice();
+  }
+  try {
+    loadVoices();
+    speechSynthesis.addEventListener('voiceschanged', loadVoices);
+  } catch (e) {}
+
+  function speak(text, force) {
+    if (!state.speak && !force) return;
+    try {
+      const u = new SpeechSynthesisUtterance(text);
+      const v = chosenVoice();
+      if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'zh-TW';
+      u.rate = state.rate || 0.85;
+      speechSynthesis.cancel(); speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+
+  function renderVoice() {
+    const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+    const def = defaultVoice();
+    const zh = voices.filter(isZh).sort((a, b) => (isTW(b) - isTW(a)) || a.name.localeCompare(b.name));
+    const other = voices.filter((v) => !isZh(v));
+    const opt = (v) => `<option value="${esc(v.voiceURI)}" ${state.voice === v.voiceURI ? 'selected' : ''}>${esc(v.name)}（${esc(v.lang)}）</option>`;
+    const rates = [[0.7, '慢'], [0.85, '適中'], [1, '正常']];
+    const cur = chosenVoice();
+    return `<div id="voiceBox" class="flex flex-col gap-2 sm:col-span-2 lg:col-span-3">
+      <span class="text-xs font-medium tracking-widest text-muted">念口訣的語音</span>
+      <div class="flex flex-wrap items-center gap-2">
+        <select id="voiceSel" aria-label="選擇語音"
+          class="min-w-0 max-w-full flex-1 rounded-lg border border-line bg-surface px-3 py-1.5 text-sm text-ink transition hover:border-ink focus:border-chip focus:outline-none sm:flex-none sm:w-80">
+          <option value="" ${!state.voice ? 'selected' : ''}>預設：Microsoft Yating（zh-TW）${voices.some(isYating) ? '' : '（這台裝置沒有）'}</option>
+          ${zh.length ? `<optgroup label="中文語音">${zh.map(opt).join('')}</optgroup>` : ''}
+          ${other.length ? `<optgroup label="其他語音">${other.map(opt).join('')}</optgroup>` : ''}
+        </select>
+        <div class="flex gap-1.5">
+          ${rates.map(([r, l]) => `<button data-rate="${r}" class="rounded-lg border px-3 py-1.5 text-sm font-medium transition duration-150 ${(state.rate || 0.85) === r ? 'border-ink bg-ink text-surface' : 'border-line text-ink hover:-translate-y-0.5 hover:border-ink hover:bg-bg'}">${l}</button>`).join('')}
+        </div>
+        <button data-act="testVoice" class="rounded-lg border border-chip px-3 py-1.5 text-sm font-medium text-chip transition duration-150 hover:-translate-y-0.5 hover:bg-chip hover:text-chipink">▶ 試聽</button>
+      </div>
+      <p class="text-xs text-muted">${cur ? `目前使用：${esc(cur.name)}` : '這台裝置找不到中文語音，會用瀏覽器預設的聲音。'}${!state.voice && def && !isYating(def) ? '（找不到 Microsoft Yating，已改用這台裝置的其他中文語音）' : ''}</p>
+    </div>`;
+  }
+
+  function buildRounds(list) {
+    if (state.order === 'shuffle') list = shuffle(list);
+    const size = state.size || list.length;
+    const k = Math.max(1, Math.ceil(list.length / size));
+    const base = Math.floor(list.length / k), extra = list.length % k;
+    const rounds = []; let i = 0;
+    for (let r = 0; r < k; r++) { const len = base + (r < extra ? 1 : 0); rounds.push(list.slice(i, i + len)); i += len; }
+    return rounds;
+  }
+  const current = () => game.rounds[game.r];
+
+  function newGame(focus) {
+    if (state.mode === 'div') { newDivGame(); return; }
+    let list;
+    const bars = state.mode === 'bars';
+    if (bars) { focus = null; list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; }
+    else if (focus) list = focus.slice();
+    else if (state.range === 'low') list = [1, 2, 3, 4, 5];
+    else if (state.range === 'high') list = [6, 7, 8, 9, 10];
+    else list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    game = { focus: focus || null, rounds: bars ? [list] : buildRounds(list), r: 0, done: new Set(), mistakes: 0, per: {}, selected: null,
+      revealed: new Set(), review: new Set(), hintOpen: new Set(), lit: new Set(), tray: [],
+      placed: 0, ask: null, tries: 0, phase: 'normal', lock: new Map(), lockedEver: new Set(), filler: false, lastAsk: null, rodOff: Array.from({ length: 10 }, () => +(Math.random() * 1.4).toFixed(2)) };
+    startRound();
+  }
+
+  function startRound() {
+    const cur = current();
+    let t = shuffle(cur.map((n) => B() * n));
+    for (let i = 0; i < 6 && t.length > 1 && t.every((v, j) => v === B() * cur[j]); i++) t = shuffle(t);
+    game.tray = t; game.selected = null;
+    pickNext();
+    if (state.mode === 'drill') { game.ask = game.current; game.tries = 0; }
+    board.classList.remove('awaiting');
+    doneEl.hidden = true;
+    setFeedback('idle');
+    renderAll();
+  }
+
+  const isRecall = () => state.mode === 'recall' || state.mode === 'flash';
+  const solo = () => state.mode === 'flash' || state.mode === 'drill';
+  function pickNext() {
+    const left = current().filter((n) => !game.done.has(n));
+    let pick = left[Math.floor(Math.random() * left.length)];
+    if (left.length > 1 && pick === game.current) pick = left.find((n) => n !== game.current);
+    game.current = left.length ? pick : null;
+  }
+
+  /* ---------- rendering ---------- */
+  function renderAll() {
+    const isDiv = state.mode === 'div';
+    $('#divBox').hidden = !isDiv;
+    if (isDiv) {
+      slotsEl.hidden = true; $('#line').hidden = true; $('#bars').hidden = true; trayEl.hidden = true;
+      $('#barsInner').innerHTML = ''; $('#askBox').innerHTML = ''; $('#feedback').innerHTML = '';
+      renderBase(); renderModes(); renderSettings(); renderStatus(); renderInstr(); renderDiv();
+      return;
+    }
+    $('#divBox').innerHTML = '';
+    const bars = state.mode === 'bars';
+    slotsEl.hidden = bars; $('#line').hidden = bars; $('#bars').hidden = !bars;
+    renderBase(); renderModes(); renderSettings(); renderStatus(); renderInstr(); renderSlots(); renderLine(); renderTray();
+    if (bars) renderBars();
+    renderAsk();
+  }
+
+  /* ---------- 數棒跳數 ---------- */
+  function renderBars() {
+    const b = B(), placed = game.placed, max = 10 * b;
+    const cells = () => Array.from({ length: b }, () => '<span class="h-full flex-1 border-r-2 border-ink last:border-r-0"></span>').join('');
+    let onLine = '';
+    for (let k = 1; k <= placed; k++) {
+      onLine += `<div class="absolute bottom-0 flex h-8 overflow-hidden rounded-[3px] border-2 border-ink ${k % 2 ? 'bg-chip' : 'bg-hi'}" style="left:${(k - 1) * 10}%;width:10%">${cells()}</div>`;
+    }
+    if (placed < 10 && game.ask == null) {
+      onLine += `<div id="ghost" class="absolute bottom-0 flex h-8 items-center justify-center rounded-[3px] border-2 border-dashed border-muted text-xs text-muted transition duration-150" style="left:${placed * 10}%;width:10%">放這裡</div>`;
+    }
+    let ticks = '';
+    for (let i = 1; i < max; i++) {
+      if (i % b) ticks += `<span class="absolute top-0 h-2 w-px bg-line" style="left:${i / max * 100}%"></span>`;
+    }
+    for (let n = 0; n <= 10; n++) {
+      const v = b * n, left = n * 10 + '%';
+      ticks += `<span class="absolute top-0 h-4 w-0.5 -translate-x-1/2 rounded-full ${game.done.has(n) ? 'bg-chip' : 'bg-muted'}" style="left:${left}"></span>`;
+      if (n === 0) ticks += `<span class="font-num absolute top-5 -translate-x-1/2 text-sm text-muted" style="left:${left}">0</span>`;
+      else if (game.done.has(n)) ticks += `<span class="font-num absolute top-5 -translate-x-1/2 text-base font-bold text-chip" style="left:${left}">${v}</span>`;
+      else if (game.ask === n) ticks += `<span class="font-num absolute top-4 -translate-x-1/2 rounded-md bg-hi px-2 text-lg font-bold text-ink" style="left:${left}">?</span>`;
+    }
+    let tray = '';
+    if (game.ask == null && placed < 10) {
+      for (let i = placed; i < 10; i++) {
+        tray += `<button class="rod flex h-8 cursor-grab overflow-hidden rounded-[3px] border-2 border-ink bg-surface p-0 transition duration-200 hover:-translate-y-1 hover:-rotate-1 hover:bg-hisoft hover:shadow-lg"
+          style="width:10%;margin-top:${game.rodOff[i]}rem" aria-label="一根 ${b} 格的數棒，按一下放到數線上">${cells()}</button>`;
+      }
+      tray = `<div class="flex min-h-[7rem] flex-wrap items-start justify-center gap-x-[3%] gap-y-2">${tray}</div>`;
+    } else if (placed >= 10 && game.ask == null) {
+      tray = `<p class="min-h-[3rem] text-center text-muted">10 根數棒都放好了！</p>`;
+    }
+    $('#barsInner').innerHTML = `
+      <div id="barZone" class="relative">
+        <div id="barTrack" class="relative h-10">${onLine}</div>
+        <div class="relative h-12">
+          <div class="absolute left-0 right-0 top-0 h-1 rounded-full bg-line"></div>
+          ${ticks}
+        </div>
+      </div>
+      ${tray}`;
+  }
+
+  function renderAsk() {
+    const box = $('#askBox'), k = game.ask, b = B();
+    if (k == null) { box.innerHTML = ''; return; }
+    game.askVal = '';
+    const mini = Array.from({ length: b }, () => '<span class="h-full flex-1 border-r-2 border-ink last:border-r-0"></span>').join('');
+    const key = 'font-num flex h-11 items-center justify-center rounded-lg border text-xl font-semibold transition duration-150 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0.5 active:shadow-none';
+    const dkey = (d) => `<button type="button" data-k="${d}" class="${key} border-line bg-bg text-ink hover:border-chip hover:text-chip">${d}</button>`;
+    box.innerHTML = `
+      <div class="mx-auto flex w-full max-w-3xl flex-col gap-3 rounded-2xl border-4 border-hi bg-surface p-4 shadow-lg sm:flex-row sm:items-center sm:gap-5">
+        <div class="flex min-w-0 flex-1 flex-col gap-2">
+          ${state.mode === 'drill' ? `
+          <p class="text-lg font-bold"><span class="font-num">${b}×${k}</span> 等於多少？</p>
+          <p class="text-sm font-medium text-muted">用數字鍵輸入答案，再按「確認」。</p>` : `
+          <div class="flex items-center gap-3">
+            <div class="flex h-5 w-14 shrink-0 overflow-hidden rounded-[3px] border-2 border-ink ${k % 2 ? 'bg-chip' : 'bg-hi'}">${mini}</div>
+            <p class="text-lg font-bold">放上第 <span class="font-num">${k}</span> 根數棒！</p>
+          </div>`}
+          <p class="text-sm font-medium text-muted ${state.mode === 'drill' ? 'hidden' : ''}">${k === 1
+            ? `從 <span class="font-num">0</span> 開始，放上這根 <span class="font-num">${b}</span> 格數棒，跳到多少？`
+            : `上一格是 <span class="font-num">${b * (k - 1)}</span>，再加這根 <span class="font-num">${b}</span> 格數棒，累積到多少？`}</p>
+          <div id="askDisplay" role="status" aria-label="輸入的數字"
+            class="font-num flex h-12 w-full items-center justify-center rounded-xl border-2 border-hi bg-bg text-3xl font-semibold text-muted">輸入數字</div>
+          <p id="askMsg" class="min-h-[1.25rem] text-sm font-medium text-err"></p>
+        </div>
+        <div class="grid w-full grid-cols-6 gap-1.5 sm:w-[21rem] sm:shrink-0">
+          ${[1, 2, 3, 4, 5].map(dkey).join('')}
+          <button type="button" data-k="del" aria-label="清除一個數字" class="${key} border-errsoft bg-errsoft text-err hover:border-err">⌫</button>
+          ${[6, 7, 8, 9, 0].map(dkey).join('')}
+          <button type="button" data-k="ok" class="${key} border-ok bg-ok text-base font-bold text-onok">確認</button>
+        </div>
+      </div>`;
+  }
+
+  function showAskVal() {
+    const d = $('#askDisplay'); if (!d) return;
+    d.textContent = game.askVal || '輸入數字';
+    d.classList.toggle('text-ink', !!game.askVal);
+    d.classList.toggle('text-muted', !game.askVal);
+    if (state.mode === 'drill') { const dr = slotsEl.querySelector('.drop'); if (dr) dr.textContent = game.askVal || '?'; }
+  }
+  function pressKey(k) {
+    if (game.ask == null) return;
+    if (k === 'ok') { checkAsk(); return; }
+    if (k === 'del') game.askVal = game.askVal.slice(0, -1);
+    else if (game.askVal.length < 3) game.askVal = (game.askVal + k).replace(/^0+(?=\d)/, '');
+    showAskVal();
+  }
+  $('#askBox').addEventListener('click', (e) => { const b = e.target.closest('[data-k]'); if (b) pressKey(b.dataset.k); });
+  document.addEventListener('keydown', (e) => {
+    if ((state.mode !== 'bars' && state.mode !== 'drill') || game.ask == null) return;
+    if (/^[0-9]$/.test(e.key)) pressKey(e.key);
+    else if (e.key === 'Backspace') { e.preventDefault(); pressKey('del'); }
+    else if (e.key === 'Enter') { e.preventDefault(); pressKey('ok'); }
+  });
+
+  function checkAsk() {
+    const k = game.ask, b = B(), input = $('#askDisplay'), msg = $('#askMsg');
+    if (!game.askVal) { msg.textContent = '先按數字鍵輸入答案喔。'; return; }
+    const v = parseInt(game.askVal, 10);
+    const drill = state.mode === 'drill';
+    if (v === b * k) {
+      game.done.add(k); game.lit.add(v); game.ask = null;
+      setFeedback('ok', k); speak(kj(k));
+      renderStatus(); renderAsk();
+      if (!drill) { renderBars(); if (game.placed >= 10) setTimeout(showDone, 900); return; }
+      const firstTry = game.tries === 0;
+      let mastered = false;
+      if (game.phase === 'lock') {
+        if (game.filler) { if (!firstTry) game.lock.set(k, 0); }
+        else {
+          const s = firstTry ? (game.lock.get(k) || 0) + 1 : 0;
+          if (s >= MASTER) { game.lock.delete(k); mastered = true; } else game.lock.set(k, s);
+        }
+      } else if (!firstTry) { game.lock.set(k, 0); game.lockedEver.add(k); }
+      if (mastered) $('#feedback').insertAdjacentHTML('beforeend', `<p class="mt-1 rounded-full bg-oksoft px-4 py-1 text-sm font-bold text-ok">✓ <span class="font-num">${b}×${k}</span> 練會了！</p>`);
+      else if (game.phase === 'lock' && !game.filler) $('#feedback').insertAdjacentHTML('beforeend', `<p class="mt-1 text-sm text-muted">${firstTry ? '再答對 1 次就練會了。' : '這題等一下還會再出現。'}</p>`);
+      renderStatus(); renderSlots(); renderLine();
+      const s = slotsEl.querySelector('.slot'); if (s) s.classList.add('pop');
+      game.lastAsk = k;
+      setTimeout(nextDrill, 1300);
+      return;
+    }
+    game.mistakes++; game.per[k] = (game.per[k] || 0) + 1; game.tries++;
+    if (drill) {
+      if (game.tries === 1) recordErr(k);
+      if (game.tries === 1) msg.textContent = '再想想看，也可以小聲念口訣。';
+      else if (game.tries === 2) { msg.textContent = k === 1 ? `就是 1 個 ${b}。` : `前一個答案是 ${b * (k - 1)}，再加 ${b}。`; game.hintOpen.add(k); renderSlots(); }
+      else msg.textContent = `答案是 ${b * k}，請照著打一次。`;
+    } else if (game.tries === 1) msg.textContent = `再數數看，每一根數棒有 ${b} 格。`;
+    else if (game.tries === 2) msg.textContent = `看數線，從 ${b * (k - 1)} 開始，一格一格往後數 ${b} 下。`;
+    else msg.textContent = `答案是 ${b * k}，請照著打一次。`;
+    renderStatus();
+    game.askVal = ''; showAskVal();
+    input.classList.remove('shake'); void input.offsetWidth; input.classList.add('shake');
+  }
+
+  /* ---------- 實戰演練：錯題鎖定 ---------- */
+  const MASTER = 2; // 錯過的題目要連續答對幾次才算練會
+  function loadErr() { try { return JSON.parse(localStorage.getItem('nine-match-errors') || '{}') || {}; } catch (e) { return {}; } }
+  function recordErr(n) {
+    const r = loadErr(), b = B();
+    r[b] = r[b] || {}; r[b][n] = (r[b][n] || 0) + 1;
+    try { localStorage.setItem('nine-match-errors', JSON.stringify(r)); } catch (e) {}
+  }
+
+  function nextDrill() {
+    if (state.mode !== 'drill' || !game) return;
+    if (game.phase === 'lock') {
+      if (!game.lock.size) { showDone(); return; }
+      const keys = [...game.lock.keys()];
+      let pick = null; game.filler = false;
+      if (keys.length === 1 && game.lastAsk === keys[0]) {
+        // 只剩一題時，中間穿插一題已經會的，避免連續出同一題
+        const pool = game.rounds.flat().filter((n) => !game.lock.has(n));
+        if (pool.length) { pick = pool[Math.floor(Math.random() * pool.length)]; game.filler = true; }
+      }
+      if (pick == null) {
+        const c = keys.length > 1 ? keys.filter((n) => n !== game.lastAsk) : keys;
+        pick = c[Math.floor(Math.random() * c.length)];
+      }
+      game.done.delete(pick); game.hintOpen.delete(pick);
+      game.current = pick;
+    } else {
+      if (current().every((m) => game.done.has(m))) { showDone(); return; }
+      pickNext();
+    }
+    game.ask = game.current; game.tries = 0;
+    setFeedback('idle'); renderStatus(); renderSlots(); renderAsk();
+    const s = slotsEl.querySelector('.slot'); if (s) s.classList.add('pop');
+  }
+
+  function enterLock() {
+    game.phase = 'lock'; game.lastAsk = null;
+    doneEl.hidden = true;
+    renderInstr();
+    nextDrill();
+  }
+
+  function placeRod() {
+    if (state.mode === 'div') { placeDivRod(); return; }
+    if (game.ask != null || game.placed >= 10) return;
+    game.placed++; game.ask = game.placed; game.tries = 0;
+    renderStatus(); renderBars(); renderAsk();
+  }
+
+  /* ---------- 除法：數線跳數＋直式 ---------- */
+  function makeDivProblems() {
+    const b = B();
+    let qs = state.range === 'low' ? [1, 2, 3, 4, 5] : state.range === 'high' ? [6, 7, 8, 9] : [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const count = state.size || qs.length;
+    let picks = [];
+    while (picks.length < count) picks = picks.concat(shuffle(qs));
+    picks = picks.slice(0, count);
+    if (state.order !== 'shuffle') picks.sort((x, y) => x - y);
+    const t = state.divType || 'mix';
+    return picks.map((q, k) => {
+      const withRem = t === 'rem' || (t === 'mix' && Math.random() < 0.5);
+      const r = withRem ? 1 + Math.floor(Math.random() * (b - 1)) : 0;
+      return { q, r, p: b * q, d: b * q + r };
+    });
+  }
+  function newDivGame() {
+    const probs = makeDivProblems();
+    game = { div: true, probs, i: 0, done: new Set(), mistakes: 0, per: {}, focus: null, rounds: [probs.map((_, k) => k)], r: 0,
+      lock: new Map(), lockedEver: new Set(), lockMap: {}, lockProb: null, lastAsk: null, phase: 'normal', hintOpen: new Set(), lit: new Set(), review: new Set(), revealed: new Set(), tray: [],
+      placed: 0, stage: 'jump', field: 0, vals: ['', '', ''], tries: 0, msg: '', ask: null,
+      rodOff: Array.from({ length: 10 }, () => +(Math.random() * 1.4).toFixed(2)) };
+    startDiv();
+  }
+  function startDiv() {
+    Object.assign(game, { curErr: false, placed: 0, stage: state.divBars === false ? 'calc' : 'jump', field: 0, vals: ['', '', ''], tries: 0, msg: '', shake: false });
+    doneEl.hidden = true;
+    renderAll();
+  }
+  const divP = () => game.phase === 'lock' ? game.lockProb : game.probs[game.i];
+  function loadDivErr() { try { return JSON.parse(localStorage.getItem('nine-match-div-errors') || '{}') || {}; } catch (e) { return {}; } }
+  function recordDivErr(d) {
+    const r = loadDivErr(), b = B();
+    r[b] = r[b] || {}; r[b][d] = (r[b][d] || 0) + 1;
+    try { localStorage.setItem('nine-match-div-errors', JSON.stringify(r)); } catch (e) {}
+  }
+  function divFinish() {
+    const p = divP(), k = p.d;
+    game.stage = 'done'; speak(divSay(p));
+    if (game.phase === 'lock') {
+      const s = game.curErr ? 0 : (game.lock.get(k) || 0) + 1;
+      if (s >= MASTER) { game.lock.delete(k); game.msg = `✓ ${p.d}÷${B()} 練會了！`; game.msgOk = true; }
+      else { game.lock.set(k, s); game.msg = game.curErr ? '這題等一下還會再出現。' : `再答對 ${MASTER - s} 次就練會了。`; game.msgOk = !game.curErr; }
+    } else {
+      game.done.add(game.i);
+      if (game.curErr) { game.lock.set(k, 0); game.lockedEver.add(k); game.lockMap[k] = p; }
+    }
+  }
+  function divLockNext() {
+    if (!game.lock.size) {
+      const b = B(), btn = 'rounded-xl px-5 py-2.5 font-bold transition duration-200 hover:-translate-y-0.5 hover:shadow-lg';
+      const items = [...game.lockedEver].sort((x, y) => x - y);
+      doneEl.innerHTML = `<div class="flex max-w-md flex-col items-center gap-4 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl">錯題都練會了！</h2>
+        <p class="text-muted">這次把 <b class="font-num text-ink">${items.length}</b> 題從不會練到會：</p>
+        <div class="flex flex-wrap justify-center gap-2">${items.map((d) => `<span class="font-num rounded-lg bg-oksoft px-3 py-1 font-semibold text-ok">✓ ${d}÷${b}</span>`).join('')}</div>
+        <p class="text-sm text-muted">錯題紀錄已存在「老師設定」裡。</p>
+        <button data-act="again" class="${btn} border-2 border-line text-ink hover:border-ink">再玩一次</button></div>`;
+      doneEl.hidden = false; return;
+    }
+    const keys = [...game.lock.keys()];
+    const c = keys.length > 1 ? keys.filter((d) => d !== game.lastAsk) : keys;
+    const d = c[Math.floor(Math.random() * c.length)];
+    game.lastAsk = d; game.lockProb = game.lockMap[d];
+    startDiv();
+  }
+  function divSay(p) {
+    return zhNum(p.d, false) + '除以' + ZH[B()] + '，商' + zhNum(p.q, false) + (p.r ? '，餘' + ZH[p.r] : '');
+  }
+  function placeDivRod() {
+    const p = divP(), b = B();
+    if (game.stage !== 'jump') return;
+    if (game.placed >= 10) return;
+    game.placed++;
+    if (game.placed * b > p.d) game.stage = 'over';
+    renderDiv();
+  }
+  function divReady() {
+    const p = divP(), b = B();
+    if (game.stage !== 'jump' || !game.placed) return;
+    if (p.d - game.placed * b >= b) {
+      game.msg = `還沒放完喔！${p.d} 裡面還有 ${p.d - game.placed * b} 格，夠再放一根 ${b} 格的數棒。`; game.msgOk = false; renderDiv(); return;
+    }
+    toCalc();
+  }
+  function toCalc() {
+    const p = divP(), b = B();
+    game.stage = 'calc'; game.field = 0; game.msgOk = true;
+    game.msg = p.r ? `剩下 ${p.d - game.placed * b} 格，不夠一根 ${b} 格的數棒了。` : `剛好放到 ${p.d}，一格都沒剩！`;
+    renderDiv();
+  }
+  function divOverOk() {
+    if (game.stage !== 'over') return;
+    game.stage = 'fading'; renderDiv();
+    setTimeout(() => { if (game.stage !== 'fading') return; game.placed--; toCalc(); }, 1900);
+  }
+  function divHint(f, t) {
+    const p = divP(), b = B();
+    if (state.divBars === false && t === 2) return f === 0 ? `想想看：${b} 乘以多少最接近 ${p.d}，又不超過它？` : f === 1 ? `念念 ${b} 的口訣，${b}${ZH[p.q]}得多少？` : `從 ${p.p} 往上數到 ${p.d}，數了幾下？`;
+    if (f === 0) return t === 1 ? '數數看，數線上放了幾根數棒？' : t === 2 ? `每跳一次是 ${b}，數一數橘色的弧線有幾條。` : `商是 ${p.q}，請照著打一次。`;
+    if (f === 1) return t === 1 ? `${p.q}×${b} 是多少？念念口訣。` : t === 2 ? `看數線，${p.q} 根數棒跳到哪裡？` : `答案是 ${p.p}，請照著打一次。`;
+    if (!p.r) return t === 1 ? `${p.d} 減 ${p.p} 是多少？` : t === 2 ? `${p.p} 和 ${p.d} 一樣大，相減剩多少？` : '答案是 0，請照著打一次。';
+    return t === 1 ? `${p.d} 減 ${p.p} 是多少？` : t === 2 ? '數一數數線上紅色虛線的格子有幾格。' : `答案是 ${p.r}，請照著打一次。`;
+  }
+  function divKey(k) {
+    if (game.stage !== 'calc') return;
+    const f = game.field;
+    if (k === 'ok') { divCheck(); return; }
+    if (k === 'del') game.vals[f] = game.vals[f].slice(0, -1);
+    else if (game.vals[f].length < 3) game.vals[f] = (game.vals[f] + k).replace(/^0+(?=\d)/, '');
+    renderDiv();
+  }
+  function divCheck() {
+    const p = divP(), f = game.field, ans = [p.q, p.p, p.r][f];
+    game.msgOk = false;
+    if (game.vals[f] === '') { game.msg = '先按數字鍵輸入答案喔。'; renderDiv(); return; }
+    if (+game.vals[f] === ans) {
+      game.tries = 0; game.msg = '';
+      if (f < 2) game.field++;
+      else divFinish();
+    } else {
+      game.mistakes++; game.per[game.i] = (game.per[game.i] || 0) + 1; game.tries++;
+      if (!game.curErr) { game.curErr = true; recordDivErr(p.d); }
+      game.vals[f] = ''; game.msg = divHint(f, Math.min(game.tries, 3)); game.shake = true;
+    }
+    renderStatus(); renderDiv();
+  }
+  function divNext() {
+    if (game.phase === 'lock') { divLockNext(); return; }
+    if (game.i < game.probs.length - 1) { game.i++; startDiv(); return; }
+    const b = B(), btn = 'rounded-xl px-5 py-2.5 font-bold transition duration-200 hover:-translate-y-0.5 hover:shadow-lg';
+    const missed = game.probs.filter((_, k) => game.per[k] > 0);
+    if (game.lock.size) {
+      const items = [...game.lock.keys()].sort((x, y) => x - y);
+      doneEl.innerHTML = `<div class="flex max-w-md flex-col items-center gap-4 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl">第一輪完成！</h2>
+        <p class="text-muted">有 <b class="font-num text-ink">${items.length}</b> 題答錯過。每題要<b class="text-ink">連續答對 ${MASTER} 次</b>才算練會，全部練會才過關。</p>
+        <div class="flex flex-wrap justify-center gap-2">${items.map((d) => `<span class="font-num rounded-lg bg-errsoft px-3 py-1 font-semibold text-err">${d}÷${b}</span>`).join('')}</div>
+        <button data-act="divLock" class="${btn} bg-chip text-chipink">開始錯題練習 →</button></div>`;
+      doneEl.hidden = false; return;
+    }
+    doneEl.innerHTML = `<div class="flex max-w-md flex-col items-center gap-4 text-center">
+      <h2 class="text-2xl font-bold sm:text-3xl">除法全部完成！</h2>
+      <p class="text-muted">共 <b class="font-num text-ink">${game.probs.length}</b> 題，錯誤 <b class="font-num text-ink">${game.mistakes}</b> 次。</p>
+      ${missed.length ? `<div class="flex flex-col items-center gap-2"><span class="text-xs font-medium tracking-widest text-muted">要再練的題目</span>
+        <div class="flex flex-wrap justify-center gap-2">${missed.map((p) => `<span class="font-num rounded-lg bg-errsoft px-3 py-1 font-semibold text-err">${p.d}÷${b}</span>`).join('')}</div></div>`
+        : '<p class="text-lg font-bold text-ok">一次都沒錯，太棒了！</p>'}
+      <button data-act="again" class="${btn} bg-chip text-chipink">再玩一次</button></div>`;
+    doneEl.hidden = false;
+  }
+  function renderDiv() {
+    const p = divP(), b = B(), max = 10 * b, placed = game.placed;
+    const pos = (v) => (v / max * 100) + '%';
+    const cells = () => Array.from({ length: b }, () => '<span class="h-full flex-1 border-r-2 border-ink last:border-r-0"></span>').join('');
+    // 數棒與弧線
+    let track = '', arcs = '';
+    for (let k = 1; k <= placed; k++) {
+      const extra = k === placed && (game.stage === 'over' || game.stage === 'fading');
+      const fx = extra ? (game.stage === 'fading' ? 'rodfade' : 'overrod') : '';
+      track += `<div class="${fx} absolute bottom-0 flex h-8 overflow-hidden rounded-[3px] border-2 ${extra ? 'border-err bg-errsoft' : `border-ink ${k % 2 ? 'bg-chip' : 'bg-hi'}`}" style="left:${(k - 1) * 10}%;width:10%">${cells()}</div>`;
+      const x1 = (k - 1) * 100, x2 = k * 100;
+      arcs += `<g class="${fx}" ${extra ? 'style="--hi: var(--err)"' : ''}><path d="M ${x1} 58 Q ${x1 + 50} -8 ${x2} 58" fill="none" stroke="var(--hi)" stroke-width="3" vector-effect="non-scaling-stroke"/>
+        <path d="M ${x2 - 9} 46 L ${x2} 58 L ${x2 - 16} 54" fill="none" stroke="var(--hi)" stroke-width="3" vector-effect="non-scaling-stroke"/>
+        <text x="${x1 + 50}" y="22" text-anchor="middle" font-size="16" fill="var(--hi)" font-weight="700">${k}</text></g>`;
+    }
+    if (game.stage === 'jump') {
+      track += `<div id="ghost" class="absolute bottom-0 flex h-8 items-center justify-center rounded-[3px] border-2 border-dashed border-muted text-xs text-muted transition duration-150" style="left:${placed * 10}%;width:10%">放這裡</div>`;
+    } else if (p.r && (game.stage === 'calc' || game.stage === 'done')) {
+      track += `<div class="absolute bottom-0 flex h-8 items-center justify-center rounded-[3px] border-2 border-dashed border-err bg-errsoft text-xs font-bold text-err" style="left:${pos(placed * b)};width:${p.r / max * 100}%">${game.stage === 'done' ? p.r : ''}</div>`;
+    }
+    let ticks = '';
+    for (let i = 1; i < max; i++) if (i % b) ticks += `<span class="absolute top-0 h-2 w-px bg-line" style="left:${pos(i)}"></span>`;
+    for (let n = 0; n <= 10; n++) {
+      const on = n > 0 && n <= placed;
+      ticks += `<span class="absolute top-0 h-4 w-0.5 -translate-x-1/2 rounded-full ${on ? 'bg-chip' : 'bg-muted'}" style="left:${n * 10}%"></span>`;
+      if (n === 0 || on) ticks += `<span class="font-num absolute top-5 -translate-x-1/2 text-sm ${on ? 'font-bold text-chip' : 'text-muted'}" style="left:${n * 10}%">${n * b}</span>`;
+    }
+    ticks += `<span class="absolute -top-2 h-5 w-1 -translate-x-1/2 rounded bg-err" style="left:${pos(p.d)}"></span>
+      <span class="font-num absolute top-11 -translate-x-1/2 rounded-md bg-err px-2 text-base font-bold text-surface" style="left:${pos(p.d)}">${p.d}</span>`;
+    let rods = '';
+    if (game.stage === 'jump') {
+      rods = '';
+      for (let i = placed; i < 10; i++) rods += `<button class="rod flex h-8 cursor-grab overflow-hidden rounded-[3px] border-2 border-ink bg-surface p-0 transition duration-200 hover:-translate-y-1 hover:-rotate-1 hover:bg-hisoft hover:shadow-lg" style="width:10%;margin-top:${game.rodOff[i]}rem" aria-label="一根 ${b} 格的數棒">${cells()}</button>`;
+      rods = `<div class="flex min-h-[6rem] flex-wrap items-start justify-center gap-x-[3%] gap-y-2">${rods}</div>
+        ${placed ? `<div class="flex justify-center"><button data-act="divReady" class="rounded-xl bg-ok px-5 py-2.5 font-bold text-onok transition duration-200 hover:-translate-y-0.5 hover:shadow-lg">放好了，開始填直式 ✓</button></div>` : ''}`;
+    } else if (game.stage === 'over') {
+      rods = `<div class="mx-auto flex max-w-md flex-col items-center gap-3 rounded-2xl border-4 border-err bg-errsoft p-5 text-center shadow-lg" role="alertdialog">
+        <p class="text-2xl font-bold text-err">⚠ 超過了！</p>
+        <p class="text-lg font-medium text-ink"><span class="font-num">${b}</span> 若有 <span class="font-num">${placed}</span> 組，是 <b class="font-num text-err">${placed * b}</b>，已經超過 <b class="font-num">${p.d}</b> 了。<br><span class="font-num">${p.d}</span> 不可能分成 <span class="font-num">${placed}</span> 組。</p>
+        <button data-act="divOverOk" class="rounded-xl bg-err px-6 py-2.5 text-lg font-bold text-surface transition duration-200 hover:-translate-y-0.5 hover:shadow-lg">確定</button></div>`;
+    } else if (game.stage === 'fading') {
+      rods = `<p class="text-center text-lg font-medium text-muted">把多的那一組拿走……</p>`;
+    }
+    // 直式
+    const cell = (idx) => {
+      const ok = game.field > idx || game.stage === 'done', active = game.stage === 'calc' && game.field === idx;
+      const v = ok ? String([p.q, p.p, p.r][idx]) : game.vals[idx];
+      return `<span data-cell="${idx}" class="font-num flex h-14 w-20 items-center justify-center rounded-xl border-2 text-3xl font-semibold ${ok ? 'border-ok bg-oksoft text-ok' : active ? 'border-hi bg-hisoft text-ink' : 'border-dashed border-line text-muted'}">${v || (active ? '?' : '')}</span>`;
+    };
+    const prompts = [`${p.d} 裡面有幾個 ${b}？這就是「商」。`, `商 ${p.q} × 除數 ${b} = ？`, `${p.d} − ${p.p} = ？這就是「餘數」。`];
+    const key = 'font-num flex h-11 items-center justify-center rounded-lg border text-xl font-semibold transition duration-150 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0.5';
+    const dkey = (d) => `<button type="button" data-k="${d}" class="${key} border-line bg-bg text-ink hover:border-chip hover:text-chip">${d}</button>`;
+    let side = '';
+    if (game.stage === 'over' || game.stage === 'fading') side = `<p class="text-base font-medium text-err">數棒放太多了，先看左邊的提醒。</p>`;
+    else if (game.stage === 'jump') side = `<p class="text-base font-medium text-muted">把 <b class="font-num text-ink">${b}</b> 格的數棒一根一根放上數線，看看到 <b class="font-num text-err">${p.d}</b> 之前可以放幾根。放好了就按左邊綠色按鈕。</p>`;
+    else if (game.stage === 'calc') side = `<p class="text-base font-bold text-ink">${prompts[game.field]}</p>
+      <div class="grid grid-cols-6 gap-1.5">${[1, 2, 3, 4, 5].map(dkey).join('')}
+        <button type="button" data-k="del" aria-label="清除一個數字" class="${key} border-errsoft bg-errsoft text-err">⌫</button>
+        ${[6, 7, 8, 9, 0].map(dkey).join('')}
+        <button type="button" data-k="ok" class="${key} border-ok bg-ok text-base font-bold text-onok">確認</button></div>`;
+    else side = `<p class="font-num text-2xl font-semibold">${p.d} ÷ ${b} = <span class="text-ok">${p.q}</span>${p.r ? ` …… <span class="text-err">${p.r}</span>` : ''}</p>
+      <p class="text-lg font-bold tracking-widest text-ok">${divSay(p)}</p>
+      <button data-act="divNext" class="self-start rounded-xl bg-chip px-5 py-2.5 font-bold text-chipink transition duration-200 hover:-translate-y-0.5 hover:shadow-lg">${game.phase === 'lock' ? (game.lock.size ? '下一題 →' : '看結果') : game.i < game.probs.length - 1 ? '下一題 →' : '看結果'}</button>`;
+    const showBars = state.divBars !== false;
+    $('#divBox').innerHTML = `
+      <div class="mb-3 flex justify-end">
+        <button data-act="toggleBars" role="switch" aria-checked="${showBars}" class="flex items-center gap-2 rounded-full border border-line py-1 pl-1 pr-3 text-sm font-medium text-muted transition duration-150 hover:border-ink hover:text-ink">
+          <span class="relative h-5 w-9 rounded-full transition-colors duration-200 ${showBars ? 'bg-chip' : 'bg-line'}"><span class="absolute top-0.5 h-4 w-4 rounded-full bg-surface shadow transition-all duration-200 ${showBars ? 'left-[1.125rem]' : 'left-0.5'}"></span></span>
+          顯示數棒和數線
+        </button>
+      </div>
+      <div class="flex flex-col gap-6 ${showBars ? 'lg:flex-row lg:items-start' : 'items-center'}">
+        <div class="min-w-0 flex-1 ${showBars ? '' : 'hidden'}">
+          <div class="-mx-1 overflow-x-auto px-1"><div class="flex min-w-[560px] flex-col gap-6 px-4 pt-2">
+            <div id="barZone" class="relative pt-14">
+              <svg class="pointer-events-none absolute left-0 top-0 h-14 w-full overflow-visible" viewBox="0 0 1000 60" preserveAspectRatio="none">${arcs}</svg>
+              <div class="relative h-10">${track}</div>
+              <div class="relative h-20"><div class="absolute left-0 right-0 top-0 h-1 rounded-full bg-line"></div>${ticks}</div>
+            </div>
+            ${rods}
+          </div></div>
+        </div>
+        <div class="flex w-full flex-col gap-4 rounded-2xl border-2 border-line bg-bg p-4 ${showBars ? 'lg:w-[22rem] lg:shrink-0' : 'max-w-md'}">
+          <div class="mx-auto grid grid-cols-[auto_auto] items-center font-num text-3xl font-semibold">
+            <span></span><div class="flex justify-end px-3 pb-2">${cell(0)}</div>
+            <span class="pr-2 text-right">${b}</span>
+            <div class="rounded-tl-2xl border-l-4 border-t-4 border-ink px-3 py-2 text-right text-4xl"><span class="inline-block w-20 text-center">${p.d}</span></div>
+            <span></span><div class="flex justify-end px-3 pt-2">${cell(1)}</div>
+            <span></span><div class="mx-2 my-2 h-1 rounded bg-ink"></div>
+            <span></span><div class="flex justify-end px-3">${cell(2)}</div>
+          </div>
+          ${side}
+          <p id="divMsg" class="min-h-[1.25rem] text-sm font-medium ${game.msgOk ? 'text-ok' : 'text-err'}">${game.msg || ''}</p>
+        </div>
+      </div>`;
+    if (game.shake) { game.shake = false; const c = $('#divBox [data-cell="' + game.field + '"]'); if (c) c.classList.add('shake'); }
+  }
+  $('#divBox').addEventListener('click', (e) => {
+    const k = e.target.closest('[data-k]'); if (k) { divKey(k.dataset.k); return; }
+    if (e.target.closest('[data-act="divNext"]')) divNext();
+    if (e.target.closest('[data-act="divReady"]')) divReady();
+    if (e.target.closest('[data-act="divOverOk"]')) divOverOk();
+    if (e.target.closest('[data-act="toggleBars"]')) {
+      state.divBars = state.divBars === false; save();
+      if (game.stage !== 'done') startDiv(); else renderDiv();
+      renderInstr();
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (state.mode !== 'div' || !game || game.stage !== 'calc') return;
+    if (/^[0-9]$/.test(e.key)) divKey(e.key);
+    else if (e.key === 'Backspace') { e.preventDefault(); divKey('del'); }
+    else if (e.key === 'Enter') { e.preventDefault(); divKey('ok'); }
+  });
+
+  function renderBase() {
+    $('#heading').textContent = ZH[B()] + '的乘法配對';
+    let h = '';
+    for (let b = 2; b <= 10; b++) {
+      const on = b === B();
+      h += `<button data-base="${b}" aria-pressed="${on}" aria-label="${b} 的乘法"
+        class="font-num flex h-12 min-w-[3.25rem] flex-1 items-center justify-center rounded-xl border-2 text-xl font-semibold transition duration-200 sm:h-14 sm:text-2xl
+        ${on ? 'border-chip bg-chip text-chipink shadow-[0_4px_0_var(--chip-deep)]' : 'border-line bg-surface text-ink hover:-translate-y-1 hover:border-chip hover:text-chip hover:shadow-md'}">${b}</button>`;
+    }
+    $('#bases').innerHTML = h;
+  }
+
+  function renderModes() {
+    $('#modes').innerHTML = MODES.map((m) => {
+      const on = state.mode === m.key;
+      return `<button role="tab" aria-selected="${on}" data-mode="${m.key}"
+        class="flex flex-col items-center gap-0.5 rounded-xl px-2 py-2.5 transition duration-200 ${on ? 'bg-ink text-surface shadow-md' : 'text-muted hover:bg-bg hover:text-ink'}">
+        <span class="text-base font-bold sm:text-lg">${m.name}</span>
+        <span class="font-num text-xs ${on ? 'opacity-80' : ''}">${typeof m.sub === 'function' ? m.sub() : m.sub}</span></button>`;
+    }).join('');
+  }
+
+  function renderSettings() {
+    $('#settings').innerHTML = SETTINGS.map((g) => `
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-medium tracking-widest text-muted">${g.label}</span>
+        <div class="flex flex-wrap gap-1.5">
+          ${g.opts.map(([v, l]) => {
+            const on = state[g.key] === v;
+            return `<button data-key="${g.key}" data-val='${JSON.stringify(v)}'
+              class="rounded-lg border px-3 py-1.5 text-sm font-medium transition duration-150 ${on ? 'border-ink bg-ink text-surface' : 'border-line text-ink hover:-translate-y-0.5 hover:border-ink hover:bg-bg'}">${l.replace(/9×/g, B() + '×')}</button>`;
+          }).join('')}
+        </div>
+      </div>`).join('') + renderVoice() + renderErrLog();
+  }
+
+  let clearArmed = false;
+  function renderErrLog() {
+    const r = loadErr();
+    const rows = Object.keys(r).map(Number).sort((a, b) => a - b).map((b) => {
+      const items = Object.entries(r[b]).map(([n, c]) => [+n, c]).sort((x, y) => y[1] - x[1] || x[0] - y[0]);
+      if (!items.length) return '';
+      return `<div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-16 shrink-0 text-sm font-medium text-ink">${b} 的乘法</span>
+        ${items.map(([n, c]) => `<span class="font-num rounded-md bg-errsoft px-2 py-0.5 text-sm font-semibold text-err">${b}×${n} <span class="font-normal opacity-80">錯 ${c} 次</span></span>`).join('')}
+      </div>`;
+    }).join('') + (() => {
+      const dr = loadDivErr();
+      return Object.keys(dr).map(Number).sort((a, b) => a - b).map((b) => {
+        const items = Object.entries(dr[b]).map(([d, c]) => [+d, c]).sort((x, y) => y[1] - x[1] || x[0] - y[0]);
+        if (!items.length) return '';
+        return `<div class="flex flex-wrap items-center gap-1.5">
+          <span class="w-16 shrink-0 text-sm font-medium text-ink">${b} 的除法</span>
+          ${items.map(([d, c]) => `<span class="font-num rounded-md bg-errsoft px-2 py-0.5 text-sm font-semibold text-err">${d}÷${b} <span class="font-normal opacity-80">錯 ${c} 次</span></span>`).join('')}
+        </div>`;
+      }).join('');
+    })();
+    return `<div class="flex flex-col gap-2 border-t border-line pt-4 sm:col-span-2 lg:col-span-3">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <span class="text-xs font-medium tracking-widest text-muted">實戰演練與除法錯題紀錄（存在這台裝置）</span>
+        ${rows ? `<button data-act="clearErr" class="rounded-lg border px-3 py-1 text-xs font-medium transition duration-150 ${clearArmed ? 'border-err bg-err text-surface' : 'border-line text-muted hover:border-err hover:text-err'}">${clearArmed ? '再按一次確認清除' : '清除紀錄'}</button>` : ''}
+      </div>
+      ${rows || '<p class="text-sm text-muted">還沒有紀錄。學生在實戰演練和除法答錯的題目會記在這裡。</p>'}
+    </div>`;
+  }
+
+  function renderStatus() {
+    if (state.mode === 'div' && game.phase === 'lock') {
+      const chips = [...game.lock.entries()].sort((a, b) => a[0] - b[0]).map(([d, s]) =>
+        `<span class="font-num flex items-center gap-1 rounded-md bg-errsoft px-2 py-0.5 text-xs font-semibold text-err">${d}÷${B()}
+          <span class="flex gap-0.5">${Array.from({ length: MASTER }, (_, i) => `<span class="h-1.5 w-1.5 rounded-full ${i < s ? 'bg-ok' : 'bg-line'}"></span>`).join('')}</span></span>`).join('');
+      $('#status').innerHTML = `
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="font-medium text-ink">錯題練習・還剩 <span class="font-num">${game.lock.size}</span> 題</span>
+          <span class="flex flex-wrap gap-1.5">${chips}</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span>錯誤 <b class="font-num text-ink">${game.mistakes}</b> 次</span>
+          <button data-act="restart" class="rounded-lg border border-line px-3 py-1 text-ink transition duration-150 hover:border-ink hover:bg-bg">重新開始</button>
+        </div>`;
+      return;
+    }
+    if (state.mode === 'div') {
+      const dots = game.probs.map((_, k) => `<span class="h-2.5 w-2.5 rounded-full transition-colors duration-300 ${game.done.has(k) ? 'bg-ok' : k === game.i ? 'bg-hi' : 'bg-line'}"></span>`).join('');
+      $('#status').innerHTML = `
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="font-medium text-ink">第 <span class="font-num">${game.i + 1}</span> / <span class="font-num">${game.probs.length}</span> 題</span>
+          <span class="flex gap-1.5">${dots}</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span>錯誤 <b class="font-num text-ink">${game.mistakes}</b> 次</span>
+          <button data-act="restart" class="rounded-lg border border-line px-3 py-1 text-ink transition duration-150 hover:border-ink hover:bg-bg">重新開始</button>
+        </div>`;
+      return;
+    }
+    const cur = current();
+    const lockPhase = state.mode === 'drill' && game.phase === 'lock';
+    const dots = cur.map((n) => `<span class="h-2.5 w-2.5 rounded-full transition-colors duration-300 ${game.done.has(n) ? 'bg-ok' : 'bg-line'}"></span>`).join('');
+    const lockChips = [...game.lock.entries()].sort((a, b) => a[0] - b[0]).map(([n, s]) =>
+      `<span class="font-num flex items-center gap-1 rounded-md bg-errsoft px-2 py-0.5 text-xs font-semibold text-err">${B()}×${n}
+        <span class="flex gap-0.5">${Array.from({ length: MASTER }, (_, i) => `<span class="h-1.5 w-1.5 rounded-full ${i < s ? 'bg-ok' : 'bg-line'}"></span>`).join('')}</span></span>`).join('');
+    $('#status').innerHTML = `
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="font-medium text-ink">${state.mode === 'bars'
+          ? `已放 <span class="font-num">${game.placed}</span> / <span class="font-num">10</span> 根數棒`
+          : lockPhase ? `錯題練習・還剩 <span class="font-num">${game.lock.size}</span> 題`
+          : `第 <span class="font-num">${game.r + 1}</span> / <span class="font-num">${game.rounds.length}</span> 組${game.focus ? '（只練錯的題目）' : ''}`}</span>
+        ${lockPhase ? `<span class="flex flex-wrap gap-1.5">${lockChips}</span>` : `<span class="flex gap-1.5">${dots}</span>`}
+        ${state.mode === 'drill' && !lockPhase && game.lock.size ? `<span class="rounded-full bg-errsoft px-2.5 py-0.5 text-xs font-semibold text-err">待練 <span class="font-num">${game.lock.size}</span> 題</span>` : ''}
+      </div>
+      <div class="flex items-center gap-3">
+        <span>錯誤 <b class="font-num text-ink">${game.mistakes}</b> 次</span>
+        <button data-act="restart" class="rounded-lg border border-line px-3 py-1 text-ink transition duration-150 hover:border-ink hover:bg-bg">重新開始</button>
+      </div>`;
+  }
+
+  function renderInstr() {
+    const t = { bars: '把數棒一根一根拖到數線上，從 0 開始接起來。放好後，輸入現在跳到的數字。',
+      add: '算算看每張卡的加法，把答案拖到題目下面。也可以先點答案，再點題目。',
+      mul: '把答案拖到對的乘法題目下面。拖的時候，跟著念口訣。',
+      recall: '看題目，先在心裡說出答案，再點卡片看看對不對。',
+      flash: '卡片會一張一張隨機出現。先說出答案，再點卡片看看對不對。',
+      drill: '題目會一張一張隨機出現。用下方的數字鍵輸入答案，再按確認。',
+      div: '先把數棒一根一根放到數線上，看看被除數裡面有幾個除數；再把右邊的直式填完：商、乘出來的數、餘數。' };
+    $('#instr').textContent = state.mode === 'div' && game && game.phase === 'lock' ? `錯題練習：答錯過的除法題會一直出現，每題連續答對 ${MASTER} 次才算練會。`
+      : state.mode === 'div' && state.divBars === false ? '看直式，用數字鍵依序填上：商、乘出來的數、餘數。'
+      : state.mode === 'drill' && game && game.phase === 'lock'
+      ? `錯題練習：答錯過的題目會一直出現，每題連續答對 ${MASTER} 次才算練會。`
+      : t[state.mode];
+  }
+
+  function renderSlots() {
+    const one = solo();
+    const cur = one ? (game.current != null ? [game.current] : []) : current();
+    slotsEl.classList.toggle('solo', one);
+    slotsEl.style.setProperty('--cols', Math.max(1, Math.min(cur.length, 5)));
+    slotsEl.innerHTML = cur.map((n) => {
+      const filled = game.done.has(n);
+      const recall = isRecall();
+      let body = `<span class="font-num font-semibold ${one ? 'text-6xl sm:text-7xl' : 'text-2xl sm:text-3xl'}">${qText(n)}</span>`;
+      if (!recall) {
+        body += filled
+          ? `<span class="font-num flex h-14 w-16 items-center justify-center rounded-xl bg-ok text-2xl font-semibold text-onok">${B() * n}</span>
+             <span class="text-sm font-bold tracking-widest text-ok">${kj(n)}</span>`
+          : `<span class="drop font-num flex h-14 w-16 items-center justify-center rounded-xl border-2 border-dashed border-line text-2xl text-muted transition-colors duration-200 group-hover:border-chip group-hover:text-chip">?</span>`;
+        if (!filled && game.hintOpen.has(n)) body += `<span class="rounded-md bg-hisoft px-2 py-0.5 text-sm font-medium text-ink"><span class="font-num">${hintText(n)}</span></span>`;
+        else if (!filled && state.hints) body += `<button data-hint="${n}" class="hintbtn rounded-md px-2 py-0.5 text-xs font-medium text-muted transition duration-150 hover:bg-hisoft hover:text-ink">看提示</button>`;
+      } else {
+        if (!game.revealed.has(n)) {
+          body += `<span class="flex h-14 w-16 items-center justify-center rounded-xl border-2 border-dashed border-line text-sm text-muted transition-colors duration-200 group-hover:border-chip group-hover:text-chip">點我</span>`;
+        } else {
+          body += `<span class="font-num flex h-14 w-16 items-center justify-center rounded-xl ${filled && game.review.has(n) ? 'bg-hi text-ink' : filled ? 'bg-ok text-onok' : 'bg-chip text-chipink'} text-2xl font-semibold">${B() * n}</span>
+                   <span class="text-sm font-bold tracking-widest ${filled && !game.review.has(n) ? 'text-ok' : 'text-ink'}">${kj(n)}</span>`;
+          body += filled
+            ? `<span class="text-xs font-medium text-muted">${game.review.has(n) ? '↻ 再練' : '✓ 會了'}</span>`
+            : `<span class="flex gap-1.5">
+                 <button data-mark="${n}" data-ok="1" class="markbtn rounded-lg bg-ok px-2.5 py-1 text-sm font-bold text-onok transition duration-150 hover:-translate-y-0.5 hover:shadow-md">我答對了</button>
+                 <button data-mark="${n}" data-ok="0" class="markbtn rounded-lg border border-line px-2.5 py-1 text-sm font-medium text-ink transition duration-150 hover:-translate-y-0.5 hover:border-ink">再練</button>
+               </span>`;
+        }
+      }
+      const cls = filled
+        ? (recall && game.review.has(n) ? 'border-hi bg-hisoft' : 'border-ok bg-oksoft')
+        : 'empty cursor-pointer border-line bg-bg hover:-translate-y-0.5 hover:border-chip hover:shadow-md';
+      return `<div role="button" tabindex="0" data-n="${n}" aria-label="${qText(n)}${filled ? '，已完成' : ''}"
+        class="slot group relative flex ${one ? (state.mode === 'drill' ? 'min-h-[11rem] gap-3' : 'min-h-[16rem] gap-4') : 'min-h-[9.5rem]'} select-none flex-col items-center justify-center gap-2 rounded-2xl border-2 px-2 py-4 transition duration-200 ${cls}">${body}</div>`;
+    }).join('');
+  }
+
+  function renderLine() {
+    // 0 to 10b split into 10b small steps; every b-th step is a labelled major tick.
+    const b = B(), max = 10 * b;
+    const pos = (i) => (i / max * 100) + '%';
+    let segs = '', minors = '', majors = '';
+    for (let v = b; v <= max; v += b) {
+      if (game.lit.has(v)) segs += `<span class="absolute top-0 h-1 rounded-full bg-chip" style="left:${pos(v - b)};width:10%"></span>`;
+    }
+    for (let i = 1; i < max; i++) {
+      if (i % b === 0) continue;
+      const on = game.lit.has(b * Math.ceil(i / b));
+      minors += `<span class="absolute top-0 h-2 w-px transition-colors duration-300 ${on ? 'bg-chip' : 'bg-line'}" style="left:${pos(i)}"></span>`;
+    }
+    const showNums = state.lineNums !== false;
+    for (let v = 0; v <= max; v += b) {
+      const on = game.lit.has(v);
+      majors += `<span class="absolute top-0 h-4 w-0.5 -translate-x-1/2 rounded-full transition-colors duration-300 ${on ? 'bg-chip' : 'bg-muted'}" style="left:${pos(v)}"></span>`;
+      if (showNums || v === 0) majors += `<span class="font-num absolute top-5 -translate-x-1/2 text-xs transition-colors duration-300 sm:text-sm ${on ? 'font-bold text-chip' : 'text-muted'}" style="left:${pos(v)}">${v}</span>`;
+    }
+    $('#line').innerHTML = `
+      <div class="flex items-center gap-3">
+        <div class="flex shrink-0 flex-col items-start gap-1.5">
+          <span class="hidden text-xs font-medium tracking-widest text-muted sm:inline">${b} 的跳數線</span>
+          <button data-act="nums" role="switch" aria-checked="${showNums}" aria-label="數線上的數字"
+            class="flex items-center gap-1.5 rounded-full border border-line py-0.5 pl-0.5 pr-2.5 text-xs font-medium text-muted transition duration-150 hover:border-ink hover:text-ink">
+            <span class="relative h-4 w-7 rounded-full transition-colors duration-200 ${showNums ? 'bg-chip' : 'bg-line'}">
+              <span class="absolute top-0.5 h-3 w-3 rounded-full bg-surface shadow transition-all duration-200 ${showNums ? 'left-[0.875rem]' : 'left-0.5'}"></span>
+            </span>
+            顯示數字
+          </button>
+        </div>
+        <div class="min-w-0 flex-1 px-3">
+          <div class="relative h-11">
+            <div class="absolute left-0 right-0 top-0 h-1 rounded-full bg-line"></div>
+            ${segs}${minors}${majors}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function renderTray() {
+    trayEl.hidden = isRecall() || state.mode === 'bars' || state.mode === 'drill';
+    if (trayEl.hidden) return;
+    const left = game.tray.filter((v) => !game.done.has(v / B()));
+    if (!left.length) { trayEl.innerHTML = `<p class="text-muted">這組都配好了！</p>`; return; }
+    trayEl.innerHTML = left.map((v) => {
+      const sel = game.selected === v;
+      return `<button data-v="${v}" aria-pressed="${sel}" aria-label="答案 ${v}"
+        class="chip font-num flex h-20 w-20 items-center justify-center rounded-2xl bg-chip text-3xl font-semibold text-chipink shadow-[0_5px_0_var(--chip-deep)] transition duration-200 hover:-translate-y-1.5 hover:-rotate-3 hover:shadow-[0_9px_0_var(--chip-deep)] active:translate-y-0.5 active:shadow-[0_2px_0_var(--chip-deep)] sm:h-24 sm:w-24 sm:text-4xl cursor-grab
+        ${sel ? '-translate-y-1.5 ring-4 ring-hi ring-offset-2 ring-offset-surface' : ''}">${v}</button>`;
+    }).join('');
+  }
+
+  function setFeedback(kind, n, v) {
+    const f = $('#feedback');
+    if (kind === 'idle') {
+      f.innerHTML = `<p class="text-muted">${state.mode === 'bars' ? '把數棒拖到數線上，也可以直接點一下數棒。' : state.mode === 'drill' ? '按數字鍵輸入答案。' : isRecall() ? '先說答案，再點卡片確認。' : '從任何一張答案開始都可以。'}</p>`;
+    } else if (kind === 'ok') {
+      f.innerHTML = `<p class="font-num text-2xl font-semibold sm:text-3xl">${qText(n)} = <span class="text-ok">${B() * n}</span></p>
+        <p class="text-xl font-bold tracking-[0.3em] text-ok sm:text-2xl">${kj(n)}</p>`;
+    } else {
+      f.innerHTML = `<p class="text-lg font-medium text-err"><span class="font-num">${qText(n)}</span> 不是 <span class="font-num">${v}</span>，再想想看。</p>
+        ${game.hintOpen.has(n) ? '<p class="text-sm text-muted">卡片上有提示了，看看它。</p>' : ''}`;
+    }
+  }
+
+  /* ---------- game actions ---------- */
+  function select(v) {
+    game.selected = (v == null || game.selected === v) ? null : v;
+    board.classList.toggle('awaiting', game.selected != null);
+    renderTray();
+  }
+
+  function tryMatch(v, n) {
+    if (game.done.has(n)) return;
+    if (v === B() * n) {
+      game.done.add(n); game.lit.add(v); game.selected = null;
+      board.classList.remove('awaiting');
+      setFeedback('ok', n);
+      speak(kj(n));
+      renderStatus(); renderSlots(); renderLine(); renderTray();
+      const s = slotsEl.querySelector(`[data-n="${n}"]`); if (s) s.classList.add('pop');
+      checkRound();
+    } else {
+      game.mistakes++; game.per[n] = (game.per[n] || 0) + 1;
+      if (state.hints && game.per[n] >= 2 && !game.hintOpen.has(n)) { game.hintOpen.add(n); renderSlots(); }
+      setFeedback('err', n, v);
+      renderStatus();
+      const s = slotsEl.querySelector(`[data-n="${n}"]`);
+      const c = trayEl.querySelector(`[data-v="${v}"]`);
+      [s, c].forEach((el) => { if (!el) return; el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); });
+    }
+  }
+
+  function checkRound() {
+    if (current().every((n) => game.done.has(n))) setTimeout(showDone, 900);
+  }
+
+  function showDone() {
+    const last = game.r === game.rounds.length - 1;
+    const btn = 'rounded-xl px-5 py-2.5 font-bold transition duration-200 hover:-translate-y-0.5 hover:shadow-lg';
+    if (state.mode === 'drill' && last && game.phase !== 'lock' && game.lock.size) {
+      const items = [...game.lock.keys()].sort((a, b) => a - b);
+      doneEl.innerHTML = `<div class="flex max-w-md flex-col items-center gap-4 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl">第一輪完成！</h2>
+        <p class="text-muted">有 <b class="font-num text-ink">${items.length}</b> 題答錯過。每題要<b class="text-ink">連續答對 ${MASTER} 次</b>才算練會，全部練會才過關。</p>
+        <div class="flex flex-wrap justify-center gap-2">${items.map((n) => `<span class="font-num rounded-lg bg-errsoft px-3 py-1 font-semibold text-err">${B()}×${n}</span>`).join('')}</div>
+        <button data-act="lock" class="${btn} bg-chip text-chipink">開始錯題練習 →</button></div>`;
+      doneEl.hidden = false; return;
+    }
+    if (state.mode === 'drill' && game.phase === 'lock') {
+      const items = [...game.lockedEver].sort((a, b) => a - b);
+      doneEl.innerHTML = `<div class="flex max-w-md flex-col items-center gap-4 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl">錯題都練會了！</h2>
+        <p class="text-muted">這次把 <b class="font-num text-ink">${items.length}</b> 題從不會練到會：</p>
+        <div class="flex flex-wrap justify-center gap-2">${items.map((n) => `<span class="font-num rounded-lg bg-oksoft px-3 py-1 font-semibold text-ok">✓ ${B()}×${n}</span>`).join('')}</div>
+        <p class="text-sm text-muted">錯題紀錄已存在「老師設定」裡。</p>
+        <button data-act="again" class="${btn} border-2 border-line text-ink hover:border-ink">再玩一次</button></div>`;
+      doneEl.hidden = false; return;
+    }
+    if (!last) {
+      const cur = current().slice().sort((a, b) => a - b);
+      doneEl.innerHTML = `<div class="flex max-w-md flex-col items-center gap-4 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl">第 ${game.r + 1} 組完成！</h2>
+        <p class="text-muted">一起從頭念一次：</p>
+        <div class="flex flex-wrap justify-center gap-2">${cur.map((n) => `<span class="rounded-lg bg-oksoft px-3 py-1.5 text-lg font-bold tracking-widest text-ok">${kj(n)}</span>`).join('')}</div>
+        <button data-act="next" class="${btn} bg-chip text-chipink">下一組 →</button></div>`;
+    } else {
+      const all = game.rounds.flat();
+      const missed = all.filter((n) => game.per[n] > 0 || game.review.has(n)).sort((a, b) => a - b);
+      const nextMode = state.mode === 'bars' ? { key: 'add', name: '累加配對' } : state.mode === 'add' ? { key: 'mul', name: '乘法配對' } : state.mode === 'mul' ? { key: 'recall', name: '說說看' } : state.mode === 'recall' ? { key: 'flash', name: '隨機抽考' } : state.mode === 'flash' ? { key: 'drill', name: '實戰演練' } : null;
+      doneEl.innerHTML = `<div class="flex max-w-md flex-col items-center gap-4 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl">全部完成！</h2>
+        <p class="text-muted">共 <b class="font-num text-ink">${all.length}</b> 題，${isRecall() ? '標記再練' : '錯誤'} <b class="font-num text-ink">${isRecall() ? game.review.size : game.mistakes}</b> ${isRecall() ? '題' : '次'}。</p>
+        ${missed.length ? `<div class="flex flex-col items-center gap-2">
+            <span class="text-xs font-medium tracking-widest text-muted">要再練的題目</span>
+            <div class="flex flex-wrap justify-center gap-2">${missed.map((n) => `<span class="font-num rounded-lg bg-errsoft px-3 py-1 font-semibold text-err">${B()}×${n}</span>`).join('')}</div>
+          </div>` : `<p class="text-lg font-bold text-ok">一次都沒錯，太棒了！</p>`}
+        <div class="flex flex-wrap justify-center gap-2">
+          ${missed.length && state.mode !== 'bars' ? `<button data-act="focus" data-items="${missed.join(',')}" class="${btn} bg-chip text-chipink">只練這幾題</button>` : ''}
+          <button data-act="again" class="${btn} border-2 border-line text-ink hover:border-ink">再玩一次</button>
+          ${nextMode && !missed.length ? `<button data-act="mode" data-mode="${nextMode.key}" class="${btn} bg-ok text-onok">下一步：${nextMode.name}</button>` : ''}
+        </div>
+        ${nextMode && missed.length ? `<p class="text-sm text-muted">都熟了以後，再試試「${nextMode.name}」。</p>` : ''}
+      </div>`;
+    }
+    doneEl.hidden = false;
+  }
+
+  /* ---------- events ---------- */
+  $('#settingsBtn').addEventListener('click', (e) => {
+    const s = $('#settings'); s.hidden = !s.hidden; e.currentTarget.setAttribute('aria-expanded', String(!s.hidden));
+    clearArmed = false; if (!s.hidden) renderSettings();
+  });
+  $('#bases').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-base]'); if (!b || +b.dataset.base === B()) return;
+    state.base = +b.dataset.base; save(); newGame(null);
+  });
+  $('#modes').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-mode]'); if (!b || b.dataset.mode === state.mode) return;
+    state.mode = b.dataset.mode; save(); newGame(null);
+  });
+  $('#settings').addEventListener('change', (e) => {
+    if (e.target.id !== 'voiceSel') return;
+    state.voice = e.target.value; save();
+    $('#voiceBox').outerHTML = renderVoice();
+    speak(kj(3), true);
+  });
+  $('#settings').addEventListener('click', (e) => {
+    if (e.target.closest('[data-act="testVoice"]')) { speak(kj(3), true); return; }
+    const rb = e.target.closest('[data-rate]');
+    if (rb) { state.rate = +rb.dataset.rate; save(); $('#voiceBox').outerHTML = renderVoice(); speak(kj(3), true); return; }
+    if (e.target.closest('[data-act="clearErr"]')) {
+      if (clearArmed) { try { localStorage.removeItem('nine-match-errors'); localStorage.removeItem('nine-match-div-errors'); } catch (err) {} clearArmed = false; }
+      else clearArmed = true;
+      renderSettings(); return;
+    }
+    const b = e.target.closest('[data-key]'); if (!b) return;
+    state[b.dataset.key] = JSON.parse(b.dataset.val); save(); newGame(null);
+  });
+  $('#line').addEventListener('click', (e) => {
+    if (!e.target.closest('[data-act="nums"]')) return;
+    state.lineNums = state.lineNums === false; save(); renderLine();
+  });
+  $('#status').addEventListener('click', (e) => { if (e.target.closest('[data-act="restart"]')) newGame(game.focus); });
+  doneEl.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-act]'); if (!b) return;
+    const act = b.dataset.act;
+    if (act === 'next') { game.r++; startRound(); }
+    else if (act === 'again') newGame(null);
+    else if (act === 'lock') enterLock();
+    else if (act === 'divLock') { game.phase = 'lock'; game.lastAsk = null; doneEl.hidden = true; renderInstr(); divLockNext(); }
+    else if (act === 'focus') newGame(b.dataset.items.split(',').map(Number));
+    else if (act === 'mode') { state.mode = b.dataset.mode; save(); newGame(null); }
+  });
+
+  function slotAction(e) {
+    const hint = e.target.closest('.hintbtn');
+    if (hint) { e.stopPropagation(); game.hintOpen.add(+hint.dataset.hint); renderSlots(); return; }
+    const mark = e.target.closest('.markbtn');
+    if (mark) {
+      const n = +mark.dataset.mark, ok = mark.dataset.ok === '1';
+      game.done.add(n);
+      if (ok) game.lit.add(B() * n); else { game.review.add(n); game.mistakes++; }
+      renderStatus(); renderSlots(); renderLine(); checkRound();
+      if (solo() && !current().every((m) => game.done.has(m))) {
+        setTimeout(() => {
+          pickNext(); setFeedback('idle'); renderSlots();
+          const s = slotsEl.querySelector('.slot'); if (s) s.classList.add('pop');
+        }, 900);
+      }
+      return;
+    }
+    const slot = e.target.closest('.slot'); if (!slot) return;
+    const n = +slot.dataset.n;
+    if (isRecall()) {
+      if (game.revealed.has(n)) return;
+      game.revealed.add(n); setFeedback('ok', n); speak(kj(n)); renderSlots();
+      return;
+    }
+    if (game.selected != null) tryMatch(game.selected, n);
+  }
+  slotsEl.addEventListener('click', slotAction);
+  slotsEl.addEventListener('keydown', (e) => {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('slot')) { e.preventDefault(); slotAction(e); }
+  });
+
+  // 數棒: drag a rod onto the number line, or tap / press Enter to place it
+  const barsEl = $('#bars');
+  let rd = null;
+  board.addEventListener('click', (e) => { if (e.detail === 0 && e.target.closest('.rod')) placeRod(); });
+  board.addEventListener('pointerdown', (e) => {
+    const r = e.target.closest('.rod'); if (!r || e.button > 0) return;
+    e.preventDefault();
+    rd = { r, x: e.clientX, y: e.clientY, id: e.pointerId, moved: false, over: false };
+    try { r.setPointerCapture(e.pointerId); } catch (err) {}
+  });
+  document.addEventListener('pointermove', (e) => {
+    if (!rd || e.pointerId !== rd.id) return;
+    const dx = e.clientX - rd.x, dy = e.clientY - rd.y;
+    if (!rd.moved && Math.hypot(dx, dy) > 8) { rd.moved = true; rd.r.classList.add('dragging'); }
+    if (!rd.moved) return;
+    rd.r.style.transform = `translate(${dx}px, ${dy}px) scale(1.05)`;
+    const z = $('#barZone').getBoundingClientRect();
+    const over = e.clientX > z.left - 20 && e.clientX < z.right + 20 && e.clientY > z.top - 40 && e.clientY < z.bottom + 20;
+    if (over !== rd.over) { rd.over = over; const g = $('#ghost'); if (g) g.classList.toggle('ghost-over', over); }
+  });
+  function endRod(e, cancelled) {
+    if (!rd || e.pointerId !== rd.id) return;
+    const d = rd; rd = null;
+    if (!d.moved) { if (!cancelled) placeRod(); return; }
+    d.r.classList.remove('dragging'); d.r.style.transform = '';
+    const g = $('#ghost'); if (g) g.classList.remove('ghost-over');
+    if (!cancelled && d.over) placeRod();
+  }
+  document.addEventListener('pointerup', (e) => endRod(e, false));
+  document.addEventListener('pointercancel', (e) => endRod(e, true));
+
+  // Keyboard selection of answer tiles (pointer users go through the drag handlers below)
+  trayEl.addEventListener('click', (e) => {
+    const c = e.target.closest('.chip'); if (!c || e.detail !== 0) return;
+    const v = +c.dataset.v; select(v);
+    const again = trayEl.querySelector(`[data-v="${v}"]`); if (again) again.focus();
+  });
+
+  // Drag (mouse, pen, touch) — a short tap selects instead
+  let drag = null;
+  trayEl.addEventListener('pointerdown', (e) => {
+    const chip = e.target.closest('.chip'); if (!chip || e.button > 0) return;
+    e.preventDefault();
+    drag = { chip, v: +chip.dataset.v, x: e.clientX, y: e.clientY, id: e.pointerId, moved: false, over: null };
+    try { chip.setPointerCapture(e.pointerId); } catch (err) {}
+  });
+  document.addEventListener('pointermove', (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    if (!drag.moved && Math.hypot(dx, dy) > 8) {
+      drag.moved = true; drag.chip.classList.add('dragging');
+      if (game.selected != null) { game.selected = null; board.classList.remove('awaiting'); }
+    }
+    if (!drag.moved) return;
+    drag.chip.style.transform = `translate(${dx}px, ${dy}px) scale(1.08) rotate(-3deg)`;
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    const slot = el && el.closest('.slot.empty');
+    if (slot !== drag.over) { if (drag.over) drag.over.classList.remove('over'); if (slot) slot.classList.add('over'); drag.over = slot; }
+  });
+  function endDrag(e, cancelled) {
+    if (!drag || e.pointerId !== drag.id) return;
+    const d = drag; drag = null;
+    if (d.over) d.over.classList.remove('over');
+    if (!d.moved) { if (!cancelled) select(d.v); return; }
+    d.chip.classList.remove('dragging'); d.chip.style.transform = '';
+    if (!cancelled && d.over) tryMatch(d.v, +d.over.dataset.n);
+  }
+  document.addEventListener('pointerup', (e) => endDrag(e, false));
+  document.addEventListener('pointercancel', (e) => endDrag(e, true));
+
+  newGame(null);
+})();
+</script>
+
+</body></html>
